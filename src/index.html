@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasty Treats</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+    <load src="partials/header.html" />
+    <load src="partials/hero.html" />
 
-    <section>
-      <h1>Lorem ipsum dolor sit amet.</h1>
-      <!-- Path to images as from index.html file -->
-    </section>
+    <main>
+      <section>
+        <div class="container">
+          <load src="partials/categories-btn.html" />
+          <load src="partials/search-recipes.html" />
+          <load src="partials/popular-recipes.html" />
+        </div>
+      </section>
+    </main>
+    <load src="partials/modal-recipe.html" />
+    <load src="partials/order-now.html" />
+    <load src="partials/rating-pop-up.html" />
 
-    <!-- Loads the specified .html file -->
-
-  </body>
+    
+    <script type="module" src="/main.js"></script>
+</body>
 </html>
