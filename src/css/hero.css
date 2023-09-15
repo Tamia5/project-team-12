@@ -236,7 +236,7 @@
     display: block;
   }
   
-  span.swiper-pagination-bullet {
+  /* span.swiper-pagination-bullet {
     opacity: 1;
     background-color: #050505;
   }
@@ -244,7 +244,7 @@
   span.swiper-pagination-bullet-active {
     background: #9bb537;
     opacity: 1;
-  }
+  } */
   
   @media screen and (min-width: 375px) {
   
@@ -283,7 +283,7 @@
       font-weight: 600;
     }
     .hero-green {
-      color: var(--green);
+      color: #9bb537;
       font-style: italic;
       font-weight: 400;
     }
