@@ -48,6 +48,10 @@
     width: 24px;
     height: 24px;
 }
+.svg-shopping-cart:hover,
+.svg-shopping-cart:focus {
+    fill: #9BB537;
+}
 
 /*=============================================
 =      MOBILE 
@@ -64,6 +68,26 @@
     height: 32px;
     stroke: #050505;
 }
+/* @media (hover: hover) {
+    .header-btn-hamburger-svg:hover,
+    .header-btn-hamburger-svg:focus {
+        stroke: #9BB537;
+    }
+}
+
+@media not(hover: hover) {
+    .header-btn-hamburger-svg:active {
+        stroke: #9BB537;
+    }
+}
+/* @media (max-width: 375px) {
+
+    .header-btn-hamburger-svg:hover,
+    .header-btn-hamburger-svg:focus {
+        stroke: #9BB537;
+
+    }
+} */
 
 .header-mobile-menu {
     background-color: #9BB537;
@@ -195,6 +219,7 @@ input:checked+.slider-mobile:before {
             display: inline-block;
             width: 46px;
             height: 20px;
+            cursor: pointer;
         }
     
         /* Збільшуємо радіус для створення круга */
@@ -277,30 +302,3 @@ input:checked+.slider-mobile:before {
     }
 
 }
-
-
-
-
-
-
-
-/* @media (hover: hover) {
-    .header-btn-hamburger-svg:hover,
-    .header-btn-hamburger-svg:focus {
-        stroke: #9BB537;
-    }
-}
-
-@media not(hover: hover) {
-    .header-btn-hamburger-svg:active {
-        stroke: #9BB537;
-    }
-}
-/* @media (max-width: 375px) {
-
-    .header-btn-hamburger-svg:hover,
-    .header-btn-hamburger-svg:focus {
-        stroke: #9BB537;
-
-    }
-} */
