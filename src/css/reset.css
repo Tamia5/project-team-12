@@ -1,27 +1,8 @@
-:root {
-    --main-background-color: #F8F8F8;
-
-    --accent-text-color: #9BB537;
-    --button-color: #9BB537;
-    --black-text-color: #000000;
-    --main-title-text-color: #050505;
-    --white-text-color: #FFFFFF;
-
-/* кольори з прозорістю для текста  */
-     --main-text-color: rgba(5, 5, 5, 0.80);
-     --secondary-text-color: rgba(5, 5, 5, 0.50);
-     --input-color: rgba(5, 5, 5, 0.20);
-    
-}
-    
-
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
-
-
 
 h1,
 h2,
@@ -35,16 +16,10 @@ p {
 }
 
 ul {
-    padding-left: 0;
     margin: 0;
+    padding: 0;
+    list-style: none;
 
-}
-body{
-    font-family: 'Inter', sans-serif;
-    background-color: var(--main-background-color); 
-    /* назви кольорів які присутні в тексті */
-    /* font-family: 'Poppins', sans-serif;
-        font-family: 'DM Sans', sans-serif; */
 }
 
 .list {
@@ -54,38 +29,9 @@ body{
 a {
     text-decoration: none;
 }
-
-
-
-
-
-
-
-
- .conteiner {
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin: 0 auto;
-    
-   
-
-
-    @media screen and (min-width: 375px) {
-        width: 375px;
-    }
-
-    @media screen and (min-width: 768px) {
-        width: 768px;
-       
-    }
-          @media screen and (min-width: 1280px) {
-              width: 1280px;
-          }
+button {
+  cursor: pointer;
 }
-
-
-
 
 
 
