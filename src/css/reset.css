@@ -15,18 +15,11 @@ p {
     margin: 0;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-}
-
 .list {
     list-style: none;
 }
 
-a {
+.link {
     text-decoration: none;
 }
 button {

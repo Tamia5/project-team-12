@@ -1,0 +1,306 @@
+.header {
+    padding: 20px;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+}
+.header-nav-left,
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.header-nav-list,
+.switch {
+    display: none;
+}
+
+.nav-link {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #050505;
+}
+.desk-h {
+    font-weight: 500;
+}
+.nav-link.active {
+    color: #9BB537;
+}
+
+.header-logo {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #9BB537;
+    margin-right: 182px;
+}
+
+.dark-part {
+    color: #050505;
+}
+
+.svg-shopping-cart {
+    width: 24px;
+    height: 24px;
+}
+
+/*=============================================
+=      MOBILE 
+==============================================*/
+
+.header-btn-hamburger {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+.header-btn-hamburger-svg {
+    display: block;
+    width: 32px;
+    height: 32px;
+    stroke: #050505;
+}
+
+.header-mobile-menu {
+    background-color: #9BB537;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60%;
+    transform: translateX(100%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    z-index: 999;
+    transition: 500ms ease-in-out;
+}
+
+.is-open {
+    transform: translateX(0%);
+}
+
+.header-btn-close {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    align-self: flex-end;
+}
+
+.header-btn-close-svg {
+    display: block;
+    width: 32px;
+    height: 32px;
+    stroke: #F8F8F8;
+}
+
+.header-mobile-nav {
+    padding-top: 200px;
+    margin: 0 auto;
+}
+.header-nav-mobile-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 0;
+}
+
+.nav-mobile-link {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.4;
+}
+.link-h {
+    font-weight: 500;
+
+}
+
+
+/*=============================================
+=         MOBILE MENU SWITCHER      =
+==============================================*/
+.switch-toggler {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.switch-mobile {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 20px;
+    
+}
+.switch-mobile input[type="checkbox"] {
+    display: none;
+}
+
+.slider-mobile {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 6px;
+    bottom: 0;
+    background-color: #CECDCD;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider-mobile:before {
+    position: absolute;
+    content: "";
+    height: 18.8px;
+    width: 18.8px;
+    left: 1px;
+    bottom: 1px;
+    background-color: #F8F8F8;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider-mobile {
+    background: linear-gradient(90.15deg, #9BB537 -21.95%, rgba(155, 181, 55, 0.69) 118.98%);
+}
+
+input:checked+.slider-mobile:before {
+    -webkit-transform: translateX(18.8px);
+    -ms-transform: translateX(18.8px);
+    transform: translateX(18.8px);
+}
+
+/* Rounded sliders */
+.slider-mobile.round {
+    border-radius: 60px;
+}
+
+.slider-mobile.round:before {
+    border-radius: 60%;
+}
+
+
+/*=============================================
+=          table and desk switch          =
+===============================================*/
+@media only screen and (min-width: 758px) {
+    .switch {
+            position: relative;
+            display: inline-block;
+            width: 46px;
+            height: 20px;
+        }
+    
+        /* Збільшуємо радіус для створення круга */
+        .switch input[type="checkbox"] {
+            display: none;
+        }
+    
+        .slider {
+            position: absolute;
+            top: -1px;
+            left: 0;
+            right: 6px;
+            bottom: 0;
+            background-color: #CECDCD;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+    
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18.8px;
+            width: 18.8px;
+            left: 1px;
+            bottom: 1px;
+            background-color: #F8F8F8;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+    
+        input:checked+.slider {
+            background: linear-gradient(90.15deg, #9BB537 -21.95%, rgba(155, 181, 55, 0.69) 118.98%);
+        }
+    
+        input:checked+.slider:before {
+            -webkit-transform: translateX(18.8px);
+            -ms-transform: translateX(18.8px);
+            transform: translateX(18.8px);
+        }
+    
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 60px;
+        }
+    
+        .slider.round:before {
+            border-radius: 60%;
+        }
+}
+
+
+/*=============================================
+=         АДАПТИВ table and desk       =
+=============================================*/
+@media only screen and (min-width: 768px) {
+    .header {
+        padding: 31px 32px 0;
+    }
+    .header-btn-hamburger {
+        display: none;
+    }
+    .header-logo {
+        font-size: 18px;
+    }
+    .header-nav-list {
+        display: flex;
+        gap: 16px;
+        margin-right: 203px;
+        justify-content: space-between;
+    }
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .header {
+        padding: 0 100px;
+    }
+
+}
+
+
+
+
+
+
+
+/* @media (hover: hover) {
+    .header-btn-hamburger-svg:hover,
+    .header-btn-hamburger-svg:focus {
+        stroke: #9BB537;
+    }
+}
+
+@media not(hover: hover) {
+    .header-btn-hamburger-svg:active {
+        stroke: #9BB537;
+    }
+}
+/* @media (max-width: 375px) {
+
+    .header-btn-hamburger-svg:hover,
+    .header-btn-hamburger-svg:focus {
+        stroke: #9BB537;
+
+    }
+} */
