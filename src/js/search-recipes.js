@@ -1,6 +1,7 @@
 import { createMarkup, createArea, createIng } from "./render"
 import { fetchAreas, fetchIngredients, fetchRecipe } from "./API"
 import lodash from 'lodash'
+
 const dobounce = lodash.debounce
 
 const elements = {
@@ -10,12 +11,12 @@ const elements = {
     searchForm: document.querySelector(`.search-form`),
     homeBtn: document.querySelector(`.desk-h`)
 }
-console.log(elements.searchForm.btnReset)
+
                                         // Відмальовка країн та інгредієнтів \\
 fetchAreas()
     .then(data => {   
         elements.areaSelect.insertAdjacentHTML(`beforeend`, createArea(data))
-     })
+    })
 fetchIngredients()
     .then(data => {   
         elements.areaIngredients.insertAdjacentHTML(`beforeend`, createIng(data))

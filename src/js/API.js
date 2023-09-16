@@ -46,32 +46,18 @@ function fetchIngredients() {
 }
 export { fetchIngredients };
 
-// Hero Swiper
-const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api/events';
 
-async function fetchMasterClass() {
-  try {
-    const response = await axios.get(BASE_URL);
-
-    if (response.status === 404) {
-      throw new Error(response.status);
-    }
-    console.log(response.data);
-    return response.data;
-  } catch (error) {
-    console.log('error');
-  }
+// Hero Swiper  
+  function fetchMasterClass() {
+    return fetch(`https://tasty-treats-backend.p.goit.global/api/events`)
+        .then(resp => {
+            if (!resp.ok) {
+                console.log("Pizdez")
+            }
+            return resp.json()
+        })
 }
-
-fetchMasterClass()
-  .then(data => {
-    createMarkupSwiper(data);
-  })
-  .catch(error => console.log(error));
-
-function createMarkupSwiper(arrSliders) {
-  const swiperWrapperEl = document.querySelector('.swiper-wrapper');
-}
+export {fetchMasterClass}
 
 // ОТРИМАТИ ПОПУЛЯРНІ РЕЦЕПТИ //
 function getPopRecipes() {
@@ -87,3 +73,4 @@ function getPopRecipes() {
     });
 }
 export { getPopRecipes };
+
