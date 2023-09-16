@@ -2,21 +2,26 @@ import { createMarkup, createForm } from "./render"
 import { fetchAreas, fetchIngredients, fetchRecipe } from "./API"
 
 
-const container = document.querySelector(`.categories-container`)
-const areaSelect = document.querySelector(`[name="selectArea"`)
-const areaIngredients = document.querySelector(`[name="selectIngredients"]`)
+const elements = {
+container: document.querySelector(`.categories-container`),
+areaSelect: document.querySelector(`[name="selectArea"`),
+areaIngredients: document.querySelector(`[name="selectIngredients"]`),
+searchForm: document.querySelector(`.search-form`)
+}
+console.log(elements.searchForm)
+
 
 fetchAreas()
     .then(data => {   
-        areaSelect.innerHTML = createForm(data)
+        elements.areaSelect.insertAdjacentHTML(`beforeend`, createForm(data))
      })
 fetchIngredients()
     .then(data => {   
-        areaIngredients.innerHTML = createForm(data)
+        elements.areaIngredients.insertAdjacentHTML(`beforeend`, createForm(data))
     })
      
 // All categories
 fetchRecipe(6,1, ``,``,``,``,``)
     .then(data => {
-    container.innerHTML = createMarkup(data.results)
+    elements.container.innerHTML = createMarkup(data.results)
 })
