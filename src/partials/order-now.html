@@ -1,0 +1,37 @@
+<div class="order-backdrop backdrop is-hidden">
+    <div class="order-modal modal is-hidden" data-order-modal>
+        <button class="order-close-btn" type="button" data-order-close>
+            <svg class="order-close-icon" width="24" height="24">
+                <use href="../icons.svg#icon-x"></use>
+            </svg>
+        </button>
+        <div class="order-form-wrapper wrapper">
+            <h2 class="order-form-title">Order now</h2>
+            <form class="order-form form" name="order-form">
+                <label class="order-form-label" for="user-name">Name</label>
+                <div class="order-form-element">
+
+                    <input class="order-form-input" name="user-name" id="user-name" autofocus autocomplete="on" required
+                        minlength="2" pattern="[A-Za-z\s]{3,}" placeholder="Name" />
+                </div>
+                <label class="order-form-label" for="tel">Phone number</label>
+                <div class="order-form-element">
+                    <input class="order-form-input" type="tel" name="tel" id="tel" autocomplete="on" required
+                        pattern="^[0-9]{10}$" placeholder="0955555555" />
+                </div>
+                <label class="order-form-label" for="email">Email</label>
+                <div class="order-form-element">
+                    <input class="order-form-input" type="email" name="email" id="email" required autocomplete="on"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter email" />
+                </div>
+                <label class="order-form-label" for="user-comment">Comment</label>
+                <div class="order-form-element">
+                    <textarea class="order-form-input" name="user-comment" id="user-comment"
+                        placeholder="Enter text"></textarea>
+                </div>
+                <button class="order-form-btn send-btn" type="submit">Send</button>
+            </form>
+        </div>
+
+    </div>
+</div>
