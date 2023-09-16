@@ -47,11 +47,10 @@ export {fetchIngredients}
 
 
 // Hero Swiper
-const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api/events'
 
 async function fetchMasterClass() {
   try {
-    const response = await axios.get(BASE_URL);
+    const response = await axios.get(url);
 
     if (response.status === 404) {
       throw new Error(response.status);
