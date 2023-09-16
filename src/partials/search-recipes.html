@@ -1,15 +1,15 @@
 <section class="search-section">
     <div class="search-container">
         <form name="search-form" class="search-form">
-            <label for="Search" class="search-label">Search</label>
-            <input type="text" name="Search" class="search-input" placeholder="Enter text">
+            <label for="search" class="search-label">Search</label>
+            <input type="text" name="search" class="search-input" placeholder="Enter text">
             <svg class="icon-search" width="34" height="17">
                 <use href=""></use>
             </svg>
 
             <label for="selectTime" class="time-form">Time</label>
             <select name="selectTime">
-                <option value=" " selected>0 min</option>
+                <option value="" selected>0 min</option>
                 <option value="5">5 min</option>
                 <option value="10">10 min</option>
                 <option value="15">15 min</option>
@@ -41,7 +41,7 @@
 
             <label for="selectArea" class="area-form">Area</label>
             <select name="selectArea" class="seleact-area">
-                <option value=" " selected>Region</option>
+                <option value="" selected>Region</option>
             </select>
             <svg class="" width="34" height="17">
                 <use href=""></use>
@@ -49,13 +49,13 @@
 
             <label for="selectIngredients" class="">Ingredient</label>
             <select name="selectIngredients" class="">
-                <option value=" " selected>Product</option>
+                <option value="" selected>Product</option>
             </select>
             <svg class="" width="34" height="17">
                 <use href=""></use>
             </svg>
 
-            <button class="btn-form">Reset the filter</button>
+            <button class="btn-form" name="btnReset">Reset the filter</button>
         </form>
         <div class="categories-container"></div>
     </div>

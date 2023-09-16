@@ -2,14 +2,14 @@
 const url = `https://tasty-treats-backend.p.goit.global/api/recipes`
 
                                                 // ЗАПИТ ВСІХ РЕЦЕПТІВ //
-function fetchRecipe(limit, page, category, time, area, ingredients) {
+function fetchRecipe(limit, page, category, time, area, ingredient) {
     const params = new URLSearchParams({
         limit: limit,
         page: page,
         category: category,
         time: time,
         area: area,
-        ingredients: ingredients
+        ingredient: ingredient
    })
     return fetch(`${url}?${params}`)
         .then(resp => {

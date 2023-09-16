@@ -29,6 +29,7 @@ function markup(data) {
 export {markup}
   
 // Search-recipes
+                // ВІДМАЛЬОВКА КАРТОЧОК \\
 function createMarkup(arr) {
     return arr.map(({ description, preview, rating, tags, title, }) =>
         ` <a href=" "><svg class="categories-svg" width="12" height="12">
@@ -51,9 +52,17 @@ function createMarkup(arr) {
 }  
 export { createMarkup };
   
-function createForm(arr) {
-    return arr.map(({_id, name }) => `
+          // ВІДМАЛЬОВКА КРАЇН \\
+function createArea(arr) {
+    return arr.map(({ name }) => `
     <option value="${name}">${name}</option>
     `).join(``)
 }
-export { createForm }
+export { createArea }
+          // ВІДМАЛЬОВКА ІНГРИДІЄНТІВ \\
+function createIng(arr) {
+    return arr.map(({_id, name }) => `
+    <option value="${_id}">${name}</option>
+    `).join(``)
+}
+export { createIng }
