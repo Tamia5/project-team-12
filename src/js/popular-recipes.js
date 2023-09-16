@@ -1,4 +1,5 @@
 import { getPopRecipes } from './API';
+
 const popRecipes = document.querySelector('.popular-recipes-list');
 
 async function renderPopRecipes() {
