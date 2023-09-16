@@ -44,3 +44,30 @@ function fetchIngredients() {
         })
 }
 export {fetchIngredients}
+
+
+// Hero Swiper
+
+async function fetchMasterClass() {
+  try {
+    const response = await axios.get(url);
+
+    if (response.status === 404) {
+      throw new Error(response.status);
+    }
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.log('error');
+  }
+}
+
+fetchMasterClass()
+  .then(data => {
+    createMarkupSwiper(data);
+  })
+  .catch(error => console.log(error));
+
+function createMarkupSwiper(arrSliders) {
+  const swiperWrapperEl = document.querySelector('.swiper-wrapper'); }
+  

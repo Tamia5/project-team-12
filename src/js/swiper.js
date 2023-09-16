@@ -1,31 +1,28 @@
 import Swiper from 'swiper';
+import axios from 'axios';
 import { Pagination, Navigation, Autoplay, Parallax } from 'swiper/modules';
 import { markup } from './render';
 // import 'swiper/swiper-bundle.min.css';
 
 
 
-function events() {
-  fetch(`https://tasty-treats-backend.p.goit.global/api/events`)
-    .then(res => res.json())
-    .then(res => {
-      markup(res);
-      const swiper = new Swiper('.swiper', {
-        modules: [Pagination, Navigation, Autoplay, Parallax],
-        allowSlideNext: true,
-        pagination: {
-          el: '.slider-pagination',
-          clickable: true,
-        },
-        autoplay: {
-          delay: 2500,
-        },
-        parallax: true,
-        speed: 1000,
-    
-        loop: true,
-      });
-    }).catch(error => console.error('Error:', error)) 
-}
-events();
+const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  loop: true,
+  speed: 800,
 
+  pagination: {
+    el: '.swiper-pagination',
+    allowSlideNext: true,
+    clickable: true,
+    dynamicBullets: true,
+  },
+  autoplay: {
+    delay: 1500,
+  },
+
+  navigation: {
+    nextEl: '.swiper-btn-next',
+    prevEl: '.swiper-btn-prev',
+  },
+});
