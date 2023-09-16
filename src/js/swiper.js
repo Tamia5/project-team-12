@@ -1,10 +1,14 @@
 import Swiper from 'swiper';
-import axios from 'axios';
-import { Pagination, Navigation, Autoplay, Parallax } from 'swiper/modules';
-import { markup } from './render';
-// import 'swiper/swiper-bundle.min.css';
+import { fetchMasterClass } from './API';
+import { markUp } from './render';
 
+const wrapper = document.querySelector(`.swiper-wrapper`)
 
+fetchMasterClass()
+  .then(data => {
+    wrapper.innerHTML = markUp(data)
+  })
+  .catch(err => console.log(`Err SWIPER`))
 
 const swiper = new Swiper('.swiper', {
   direction: 'horizontal',
