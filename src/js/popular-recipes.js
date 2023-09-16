@@ -28,4 +28,4 @@ function createList(data) {
   popRecipes.insertAdjacentHTML('beforeend', markup);
 }
 
-renderPopRecipes().then(createList);
+renderPopRecipes();
