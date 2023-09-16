@@ -1,8 +1,9 @@
 import Swiper from 'swiper';
 import { Pagination, Navigation, Autoplay, Parallax } from 'swiper/modules';
+import { markup } from './render';
 // import 'swiper/swiper-bundle.min.css';
 
-const sliderContainer = document.querySelector('.events');
+
 
 function events() {
   fetch(`https://tasty-treats-backend.p.goit.global/api/events`)
