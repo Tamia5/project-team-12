@@ -6,5 +6,5 @@ import './js/categories-btn'
 import './js/search-recipes'
 import './js/order-now'
 import './js/rating-pop-up'
-
+import './js/popular-recipes';
 
