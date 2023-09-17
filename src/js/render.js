@@ -6,10 +6,11 @@ function markUp(arr) {
     ` <div class= "swiper-slide">
     <div class="slider-card">
       <div class="chief-cook">
+      <img src="${imgUrl}" width="400" height="500">
       </div>
       <div class="mini-picture-card">
         <div class="mini-picture">
-          <img src="${imgUrl}" alt="${name}" width="200" height="200">
+          <img alt="${name}" width="400" height="500">
         </div>
         <p class="dish-name">
           ${name}
@@ -19,7 +20,7 @@ function markUp(arr) {
         </p>
       </div>
       <div class="large-picture">
-        <img src="${imgWebpUrl}" alt="" width="100" height="100">
+        <img src="${imgWebpUrl}" alt="" width="400" height="500">
       </div>
     </div>
   </div>`

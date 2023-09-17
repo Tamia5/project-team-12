@@ -133,6 +133,7 @@
     }
   }
   
+
   /* @media screen and (min-width: 1280px) { */
     /* .title-wrap{
       padding-top: 45px;
@@ -140,8 +141,11 @@
   
     /* .hero {
       overflow: hidden;
+
     } */
-    /* .hero-container {
+    /* 
+    .hero-container {
+
       align-items: center;
       display: flex;
     } */
@@ -161,9 +165,11 @@
   .events,
   .slider-card {
     display: flex;
+    text-align: center;
   }
   .case {
-    width: 515px;
+    width: 100%;
+    min-height: 100%;
   }
   
   .swiper {
@@ -187,8 +193,8 @@
   }
   
   .chief-cook {
-    height: 280px;
-    width: 80px;
+    height: 100%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -212,8 +218,8 @@
   }
   
   .mini-picture {
-    height: 150px;
-    width: 150px;
+    height: 100%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -242,8 +248,8 @@
   }
   
   .large-picture {
-    height: 280px;
-    width: 185px;
+    height: 100%;
+    width: 100%;
     background-position: 45%;
     background-size: 564px;
     background-color: #050505;
@@ -333,6 +339,7 @@
       height: 442px;
       width: 351px;
       background-size: 850px;
+    
     }
   }
   
