@@ -5,7 +5,9 @@
 @import url('./popular.css');
 @import url('./pop-up.css');
 @import url('./search-recipes.css');
+@import url('./paginatin.css');
 @import url('./modal-resipe.css');
+
 
 :root {
   --main-background-color: #f8f8f8;
