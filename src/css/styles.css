@@ -5,56 +5,54 @@
 @import url('./popular.css');
 @import url('./pop-up.css');
 @import url('./search-recipes.css');
-
+@import url('./modal-resipe.css');
 
 :root {
-    --main-background-color: #F8F8F8;
+  --main-background-color: #f8f8f8;
 
-    --accent-text-color: #9BB537;
-    --button-color: #9BB537;
-    --black-text-color: #000000;
-    --main-title-text-color: #050505;
-    --white-text-color: #FFFFFF;
+  --accent-text-color: #9bb537;
+  --button-color: #9bb537;
+  --black-text-color: #000000;
+  --main-title-text-color: #050505;
+  --white-text-color: #ffffff;
 
-    /* кольори з прозорістю для текста  */
-    --main-text-color: rgba(5, 5, 5, 0.80);
-    --secondary-text-color: rgba(5, 5, 5, 0.50);
-    --input-color: rgba(5, 5, 5, 0.20);
-
+  /* кольори з прозорістю для текста  */
+  --main-text-color: rgba(5, 5, 5, 0.8);
+  --secondary-text-color: rgba(5, 5, 5, 0.5);
+  --input-color: rgba(5, 5, 5, 0.2);
 }
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--main-background-color);
- 
+  font-family: 'Inter', sans-serif;
+  background-color: var(--main-background-color);
 }
 .conteiner {
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
- @media screen and (min-width: 375px) {
-    .conteiner{
-        width: 375px;
-        margin: 0 auto;
-    }
+@media screen and (min-width: 375px) {
+  .conteiner {
+    width: 375px;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .conteiner {
-        width: 768px;
-        padding-left: 32px;
-        padding-right: 32px;
-    }
+  .conteiner {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
-    .conteiner {
-        width: 1280px;
-        padding-left: 100px;
-        padding-right: 100px;
-    }
+  .conteiner {
+    width: 1280px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }
