@@ -31,7 +31,7 @@
             <use href=""></use>
         </svg>
     </div>
-    <button class="categories-btn">See recipe</button>
+    <button class="categories-btn see-recipe-btn">See recipe</button>
 </a>
         `).join("")}function xm(s){return s.map(({name:i})=>`
     <option value="${i}">${i}</option>
