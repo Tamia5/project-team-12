@@ -25,6 +25,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
+
   font-family: 'Inter', sans-serif;
   background-color: var(--main-background-color);
 }
@@ -55,4 +56,8 @@ body {
     padding-left: 100px;
     padding-right: 100px;
   }
+}
+    font-family: 'Inter', sans-serif;
+    background-color: var(--main-background-color);
+ 
 }
