@@ -44,7 +44,7 @@ function createMarkup(arr) {
             <use href=""></use>
         </svg>
     </div>
-    <button class="categories-btn">See recipe</button>
+    <button class="categories-btn see-recipe-btn">See recipe</button>
 </a>
         `).join('')
 }  
