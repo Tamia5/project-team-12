@@ -8,4 +8,5 @@ import './js/order-now'
 import './js/rating-pop-up'
 import './js/popular-recipes';
 import './js/pagination-container'
+import './js/modal-recipe'
 
