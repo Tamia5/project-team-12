@@ -30,31 +30,3 @@ body {
     background-color: var(--main-background-color);
  
 }
-.conteiner {
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
- @media screen and (min-width: 375px) {
-    .conteiner{
-        width: 375px;
-        margin: 0 auto;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .conteiner {
-        width: 768px;
-        padding-left: 32px;
-        padding-right: 32px;
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    .conteiner {
-        width: 1280px;
-        padding-left: 100px;
-        padding-right: 100px;
-    }
-}

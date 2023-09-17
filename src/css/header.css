@@ -1,56 +1,65 @@
 .header {
     padding: 20px;
+    min-width: 320px;
+    
 }
 .header-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 100%;
+    justify-content: space-between;
 }
-.header-nav-left,
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-.header-nav-list,
+.header-nav,
 .switch {
     display: none;
 }
-
+.nav-menu {
+    display: flex;
+    gap: 16px;
+    padding: 0;
+}
+.nav-link.active {
+    color: #9BB537;
+}
 .nav-link {
     font-weight: 400;
     font-size: 12px;
     line-height: 1.5;
     color: #050505;
 }
+.nav-link:hover,
+.nav-link:focus {
+    color: #9BB537;
+}
 .desk-h {
     font-weight: 500;
 }
-.nav-link.active {
-    color: #9BB537;
-}
 
-.header-logo {
+.logo {
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5;
     color: #9BB537;
-    margin-right: 182px;
 }
 
 .dark-part {
     color: #050505;
 }
 
-.svg-shopping-cart {
-    width: 24px;
-    height: 24px;
+.header-svg {
+    display: flex;
+    align-items: center;
+    outline: none;
+    transition: color ;
 }
-.svg-shopping-cart:hover,
+.svg-shopping-cart {
+    stroke: #050505;
+    fill: transparent;
+    margin-right: 14px;
+}
+.svg-shopping-cart:hover 
 .svg-shopping-cart:focus {
-    fill: #9BB537;
+  outline: none;
+  stroke: #9BB537;
 }
 
 /*=============================================
@@ -62,32 +71,12 @@
     border: none;
     background-color: transparent;
 }
-.header-btn-hamburger-svg {
+.hamburger-svg {
     display: block;
     width: 32px;
     height: 32px;
     stroke: #050505;
 }
-/* @media (hover: hover) {
-    .header-btn-hamburger-svg:hover,
-    .header-btn-hamburger-svg:focus {
-        stroke: #9BB537;
-    }
-}
-
-@media not(hover: hover) {
-    .header-btn-hamburger-svg:active {
-        stroke: #9BB537;
-    }
-}
-/* @media (max-width: 375px) {
-
-    .header-btn-hamburger-svg:hover,
-    .header-btn-hamburger-svg:focus {
-        stroke: #9BB537;
-
-    }
-} */
 
 .header-mobile-menu {
     background-color: #9BB537;
@@ -213,7 +202,7 @@ input:checked+.slider-mobile:before {
 /*=============================================
 =          table and desk switch          =
 ===============================================*/
-@media only screen and (min-width: 758px) {
+@media only screen and (min-width: 768px) {
     .switch {
             position: relative;
             display: inline-block;
@@ -276,29 +265,29 @@ input:checked+.slider-mobile:before {
 =============================================*/
 @media only screen and (min-width: 768px) {
     .header {
-        padding: 31px 32px 0;
+        padding: 28px 32px 0;
     }
-    .header-btn-hamburger {
+    .hamburger-svg {
         display: none;
     }
-    .header-logo {
+    .logo {
         font-size: 18px;
     }
-    .header-nav-list {
+    .header-nav {
         display: flex;
-        gap: 16px;
-        margin-right: 203px;
         justify-content: space-between;
     }
-    .header-container {
-        display: flex;
-        justify-content: space-between;
+    .svg-shopping-cart {
+        margin-right: 18px;
     }
 }
 
 @media only screen and (min-width: 1200px) {
     .header {
         padding: 40px 100px 0;
+    }
+    .svg-shopping-cart {
+        margin-right: 24px;
     }
 
 }
