@@ -1,5 +1,8 @@
 .hero-container {
     overflow: hidden;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   
   .hero {
@@ -120,12 +123,13 @@
   }
   
   @media screen and (min-width: 1280px) {
-    .title-wrap{
-      padding-top: 45px;
-    }
+
   
     .hero {
       overflow: hidden;
+      width: 1280px;
+      padding-left: 100px;
+      padding-right: 100px;
     }
     .hero-container {
       align-items: center;
@@ -147,9 +151,11 @@
   .events,
   .slider-card {
     display: flex;
+    text-align: center;
   }
   .case {
-    width: 515px;
+    width: 100%;
+    min-height: 100%;
   }
   
   .swiper {
@@ -173,8 +179,8 @@
   }
   
   .chief-cook {
-    height: 280px;
-    width: 80px;
+    height: 100%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -198,8 +204,8 @@
   }
   
   .mini-picture {
-    height: 150px;
-    width: 150px;
+    height: 100%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -228,8 +234,8 @@
   }
   
   .large-picture {
-    height: 280px;
-    width: 185px;
+    height: 100%;
+    width: 100%;
     background-position: 45%;
     background-size: 564px;
     background-color: #050505;
@@ -316,8 +322,8 @@
       padding-top: 42px;
     }
     .mini-picture {
-      height: 262px;
-      width: 262px;
+      height: 100%;
+      width: 100%;
     }
     .dish-name {
       width: 276px;
@@ -332,6 +338,7 @@
       height: 442px;
       width: 351px;
       background-size: 850px;
+    
     }
   }
   
