@@ -3,22 +3,22 @@
 // Hero AH 
 function markUp(arr) {
   return arr.map(({ cook:{imgUrl }, topic:{imgWebpUrl, name, area, previewUrl} }) =>
-    ` <div class=“swiper-slide”>
-    <div class=“slider-card”>
-      <div class=“chief-cook”>
+    ` <div class= "swiper-slide">
+    <div class="slider-card">
+      <div class="chief-cook">
       </div>
-      <div class=“mini-picture-card”>
-        <div class=“mini-picture”>
+      <div class="mini-picture-card">
+        <div class="mini-picture">
           <img src="${imgUrl}" alt="${name}" width="200" height="200">
         </div>
-        <p class=“dish-name”>
+        <p class="dish-name">
           ${name}
         </p>
-        <p class=“country”>
+        <p class="country">
           ${area}
         </p>
       </div>
-      <div class=“large-picture”>
+      <div class="large-picture">
         <img src="${imgWebpUrl}" alt="" width="100" height="100">
       </div>
     </div>
