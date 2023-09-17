@@ -25,7 +25,6 @@
         <svg class="categories-svg">
             <use href="./icons.svg#icon-heart"></use>
         </svg>
-
         <div class="categories-text">
     <h3 class="title-text">${u}</h3>
     <p class="subtitle-text">${i}</p>
@@ -33,7 +32,7 @@
         <div class="categories-rating">
             <span class="number-rating">${o}</span>
             <svg class="svg-rating" >
-                <use href="./icons.svg#icon-stars"></use>
+                <use href="./icons.svg#rating"></use>
             </svg>
              <button class="categories-btn">See recipe</button>
         </div>
