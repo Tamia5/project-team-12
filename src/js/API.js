@@ -52,7 +52,7 @@ export { fetchIngredients };
     return fetch(`https://tasty-treats-backend.p.goit.global/api/events`)
         .then(resp => {
             if (!resp.ok) {
-                console.log("Pizdez")
+                console.log('Error')
             }
             return resp.json()
         })

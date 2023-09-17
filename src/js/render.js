@@ -3,23 +3,24 @@
 // Hero AH 
 function markUp(arr) {
   return arr.map(({ cook:{imgUrl }, topic:{imgWebpUrl, name, area, previewUrl} }) =>
-    ` <div class=“swiper-slide”>
-    <div class=“slider-card”>
-      <div class=“chief-cook”>
+    ` <div class= "swiper-slide">
+    <div class="slider-card">
+      <div class="chief-cook">
+      <img src="${imgUrl}" width="400" height="500">
       </div>
-      <div class=“mini-picture-card”>
-        <div class=“mini-picture”>
-          <img src="${imgUrl}" alt="${name}" width="200" height="200">
+      <div class="mini-picture-card">
+        <div class="mini-picture">
+          <img alt="${name}" width="400" height="500">
         </div>
-        <p class=“dish-name”>
+        <p class="dish-name">
           ${name}
         </p>
-        <p class=“country”>
+        <p class="country">
           ${area}
         </p>
       </div>
-      <div class=“large-picture”>
-        <img src="${imgWebpUrl}" alt="" width="100" height="100">
+      <div class="large-picture">
+        <img src="${imgWebpUrl}" alt="" width="400" height="500">
       </div>
     </div>
   </div>`
@@ -37,6 +38,7 @@ function createMarkup(arr) {
         <svg class="categories-svg">
             <use href="./icons.svg#icon-heart"></use>
         </svg>
+
         <div class="categories-text">
     <h3 class="title-text">${title}</h3>
     <p class="subtitle-text">${description}</p>
@@ -51,6 +53,7 @@ function createMarkup(arr) {
        
     </a>
 </li>`).join('')
+
 }  
 export { createMarkup };
   
