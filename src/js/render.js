@@ -36,7 +36,7 @@ function createMarkup(arr) {
         <img src="${preview}" alt="${tags}" class="categories-image">
         <div class="image-filter"></div>
         <svg class="categories-svg">
-            <use href="./icons.svg#icon-heart"></use>
+            <use href="/icons.svg#icon-heart"></use>
         </svg>
         <div class="categories-text">
     <h3 class="title-text">${title}</h3>
@@ -45,7 +45,7 @@ function createMarkup(arr) {
         <div class="categories-rating">
             <span class="number-rating">${rating}</span>
             <svg class="svg-rating" >
-                <use href="./icons.svg#rating"></use>
+                <use href="/icons.svg#rating"></use>
             </svg>
              <button class="categories-btn">See recipe</button>
         </div>
