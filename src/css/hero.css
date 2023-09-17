@@ -142,7 +142,7 @@
   
   
   
-  
+  /* --- SWIPER ---*/
 
   .events,
   .slider-card {
@@ -161,6 +161,7 @@
     display: block;
     position: relative;
     overflow: hidden;
+
   }
   
   .slider-pagination {
@@ -298,6 +299,7 @@
     }
   
     .case {
+   
       width: 889px;
     }
     .slider-pagination {
@@ -342,22 +344,11 @@
       display: flex;
     }
   
-  swiper-container {
-    width: 355px;
-    height: 466px;
+
   }
-  }
-  @media screen and (min-width: 768px) {
-    swiper-container {
-      width: 736px;
-      height: 466px;
-    }
-  }
+
   @media screen and (min-width: 1280px) {
-    swiper-container {
-      width: 640px;
-      height: 466px;
-    }
+
     .hero-wrap {
       display: flex;
       gap:0px 23px;
