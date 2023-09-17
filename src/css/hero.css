@@ -112,7 +112,7 @@
       font-size: 12px;
       line-height: 14px;
     }
-    .big-picture {
+    .large-picture {
       height: 442px;
       width: 351px;
       background-size: 850px;
@@ -244,8 +244,8 @@
   span.swiper-pagination-bullet-active {
     background: #9bb537;
     opacity: 1;
-  } */
-  
+  } 
+   */
   @media screen and (min-width: 375px) {
   
   .mini-picture {
