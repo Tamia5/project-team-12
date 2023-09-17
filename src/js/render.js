@@ -65,3 +65,16 @@ function createIng(arr) {
     `).join(``)
 }
 export { createIng }
+
+// ВІДМАЛЬОВКА КАТЕГОРІЙ \\
+
+function renderCategories(categories, categoriesList) {
+  if (categoriesList) {
+    const markup = categories.map(category => {
+      return `<li class="js-categories-item">${category.name}</li>`;
+    }).join('');
+    categoriesList.innerHTML = markup;
+  }
+}
+
+export { renderCategories };
