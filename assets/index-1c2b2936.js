@@ -23,7 +23,7 @@
         <img src="${r}" alt="${f}" class="categories-image">
         <div class="image-filter"></div>
         <svg class="categories-svg">
-            <use href="./icons.svg#icon-heart"></use>
+            <use href="/icons.svg#icon-heart"></use>
         </svg>
         <div class="categories-text">
     <h3 class="title-text">${u}</h3>
@@ -32,7 +32,7 @@
         <div class="categories-rating">
             <span class="number-rating">${o}</span>
             <svg class="svg-rating" >
-                <use href="./icons.svg#rating"></use>
+                <use href="/icons.svg#rating"></use>
             </svg>
              <button class="categories-btn">See recipe</button>
         </div>
