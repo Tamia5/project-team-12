@@ -1,7 +1,6 @@
 import { createMarkup, createArea, createIng } from "./render"
 import { fetchAreas, fetchIngredients, fetchRecipe } from "./API"
 import lodash from 'lodash'
-
 const dobounce = lodash.debounce
 
 const elements = {

@@ -60,6 +60,9 @@ export function markUp(arr) {
 }
 // Search-recipes
                 // ВІДМАЛЬОВКА КАРТОЧОК \\
+import sprite from '/icons.svg'
+console.log(sprite)
+
 function createMarkup(arr) {
     return arr.map(({ description, preview, rating, tags, title, }) =>
         `<li class="categories-list">
@@ -67,7 +70,7 @@ function createMarkup(arr) {
         <img src="${preview}" alt="${tags}" class="categories-image">
         <div class="image-filter"></div>
         <svg class="categories-svg">
-            <use href="/icons.svg#icon-heart"></use>
+            <use href="${sprite}#icon-heart"></use>
         </svg>
         <div class="categories-text">
     <h3 class="title-text">${title}</h3>
@@ -76,7 +79,7 @@ function createMarkup(arr) {
         <div class="categories-rating">
             <span class="number-rating">${rating}</span>
             <svg class="svg-rating" >
-                <use href="/icons.svg#rating"></use>
+                <use href='${sprite}#rating'></use>
             </svg>
              <button class="categories-btn">See recipe</button>
         </div>
