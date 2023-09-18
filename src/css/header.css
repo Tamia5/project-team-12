@@ -1,7 +1,5 @@
 .header {
-    padding: 20px;
-    min-width: 320px;
-    
+    padding-top: 24px;
 }
 .header-container {
     display: flex;
@@ -264,9 +262,6 @@ input:checked+.slider-mobile:before {
 =         АДАПТИВ table and desk       =
 =============================================*/
 @media only screen and (min-width: 768px) {
-    .header {
-        padding: 28px 32px 0;
-    }
     .hamburger-svg {
         display: none;
     }
@@ -280,11 +275,14 @@ input:checked+.slider-mobile:before {
     .svg-shopping-cart {
         margin-right: 18px;
     }
+    .header {
+        padding-top: 30px;
+        }
 }
 
 @media only screen and (min-width: 1200px) {
     .header {
-        padding: 40px 100px 0;
+        padding-top: 43px;
     }
     .svg-shopping-cart {
         margin-right: 24px;

@@ -25,11 +25,11 @@
     margin: 0 0 0 64px;
   }
 }
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .container {
     display: flex;
   }
-}
+} */
 .search-form {
   display: flex;
   flex-wrap: wrap;
