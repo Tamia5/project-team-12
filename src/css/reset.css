@@ -1,7 +1,7 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h1,
@@ -11,23 +11,20 @@ h4,
 h5,
 h6,
 ul,
+li,
+ol,
 p {
-    margin: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-
 .list {
-    list-style: none;
+  list-style: none;
 }
 
 .link {
-    text-decoration: none;
+  text-decoration: none;
 }
 button {
   cursor: pointer;
 }
-
-
-
-
-   
-

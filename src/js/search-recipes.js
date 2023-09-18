@@ -9,7 +9,8 @@ const elements = {
     areaSelect: document.querySelector(`[name="selectArea"`),
     areaIngredients: document.querySelector(`[name="selectIngredients"]`),
     searchForm: document.querySelector(`.search-form`),
-    homeBtn: document.querySelector(`.desk-h`)
+    homeBtn: document.querySelector(`.desk-h`),
+    searchBtn: document.querySelector(`.btn-form`)
 }
 
                                         // Відмальовка країн та інгредієнтів \\
@@ -22,10 +23,11 @@ fetchIngredients()
         elements.areaIngredients.insertAdjacentHTML(`beforeend`, createIng(data))
     })
                                         // Відмальовка рецептів \\
-elements.homeBtn.addEventListener(`click`, resetRecipes)
-elements.searchForm.search.addEventListener('input', dobounce(trimSearch, 500))
+elements.homeBtn.addEventListener(`click`, resetRecipes);
+elements.searchForm.search.addEventListener('input', dobounce(trimSearch, 500));
 elements.searchForm.addEventListener(`change`, changeRecipe);
-elements.searchForm.btnReset.addEventListener(`click`, resetRecipes)
+elements.searchBtn.addEventListener(`click`, resetRecipes);
+window.addEventListener('resize', dobounce(checkMediaQuery, 300));
 
 let limit = 6;
 let page = 1;
@@ -34,7 +36,19 @@ let time = ``;
 let area = ``;
 let ingredient = ``;
 
-startRecipe()
+checkMediaQuery()
+function checkMediaQuery() {
+  if (window.innerWidth >= 1200) {
+      limit = 9;
+      startRecipe()
+  } else if (window.innerWidth >= 768) {
+      limit = 8;
+      startRecipe()
+  } else {
+      limit = 6;
+      startRecipe()
+  }
+}
 
 function startRecipe(evt) {
 fetchRecipe(limit, page, category, time, area, ingredient)
@@ -56,7 +70,6 @@ function changeRecipe(evt) {
     ingredient = elements.searchForm.selectIngredients.value;
  fetchRecipe(limit, page, category, time, area, ingredient)
      .then(data => { 
-         console.log(data)
              elements.container.innerHTML = createMarkup(data.results)
          
         

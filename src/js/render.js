@@ -31,23 +31,28 @@ export {markUp}
                 // ВІДМАЛЬОВКА КАРТОЧОК \\
 function createMarkup(arr) {
     return arr.map(({ description, preview, rating, tags, title, }) =>
-        ` <a href=" "><svg class="categories-svg" width="12" height="12">
-        <use href=""></use>
-    </svg>
-    <li class="categories-item">
-        <img src="${preview}" alt="${tags}" class="categories-image" width="100" height="100">
-    </li>
-    <h3 class="categories-title">${title}</h3>
-    <p class="categories-text">${description}</p>
-    <div class="categories-rating">
-        <span class="categories-number">${rating}</span>
-        <svg class="categories-svg" width="12" height="12">
-            <use href=""></use>
+        `<li class="categories-list">
+    <a href=" " class="categories-link">
+        <img src="${preview}" alt="${tags}" class="categories-image">
+        <div class="image-filter"></div>
+        <svg class="categories-svg">
+            <use href="/icons.svg#icon-heart"></use>
         </svg>
-    </div>
-    <button class="categories-btn see-recipe-btn">See recipe</button>
-</a>
-        `).join('')
+        <div class="categories-text">
+    <h3 class="title-text">${title}</h3>
+    <p class="subtitle-text">${description}</p>
+        </div>
+        <div class="categories-rating">
+            <span class="number-rating">${rating}</span>
+            <svg class="svg-rating" >
+                <use href="/icons.svg#rating"></use>
+            </svg>
+             <button class="categories-btn">See recipe</button>
+        </div>
+       
+    </a>
+</li>`).join('')
+
 }  
 export { createMarkup };
   
