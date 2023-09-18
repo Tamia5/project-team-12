@@ -1,6 +1,7 @@
-import { functions } from 'lodash';
+
 import { getCategoriesFromAPI } from './API.js';
 import { renderCategories } from './render.js';
+
 
 const categoriesList = document.querySelector('.js-categories');
 const allCategoriesButton = document.querySelector('.js-btn-all-categories');
@@ -21,6 +22,8 @@ categoriesList.addEventListener('click', onSelectedCategories);
 
 
 
+allCategoriesButton.addEventListener('click', removeAllActiveClasses);
+
 function onSelectedCategories(evt) {
   const isSelectedCategoryEl = evt.target.classList.contains('js-categories-item');
   if (!isSelectedCategoryEl) {
@@ -29,15 +32,12 @@ function onSelectedCategories(evt) {
   const selectedCategoryEl = evt.target.closest('.js-categories-item');
   selectedCategoryEl.classList.add('active');
   allCategoriesButton.classList.remove('active-btn');
- 
+
   removeActiveClassFromCategory(selectedCategoryEl);
 }
 
 function removeActiveClassFromCategory(clickedCategory) {
-
   const categoryElements = document.querySelectorAll('.js-categories-item');
-
- 
   categoryElements.forEach(categoryEl => {
     if (categoryEl !== clickedCategory) {
       categoryEl.classList.remove('active');
@@ -45,51 +45,18 @@ function removeActiveClassFromCategory(clickedCategory) {
   });
 }
 
+function removeAllActiveClasses() {
+  const categoryElements = document.querySelectorAll('.js-categories-item');
+  categoryElements.forEach(categoryEl => {
+    categoryEl.classList.remove('active');
+  });
+  allCategoriesButton.classList.add('active-btn');
+}
+
 
 
 categoriesContainer.addEventListener('click', onSelectedCategories);
 
-
-// categoriesContainer.addEventListener('click', onButtonCLick);
-
-// let lastClickedButton = null;
-// function onButtonCLick(event) {
-//   const button = event.target;
-
-//   if (button.nodeName !== 'BUTTON') {
-//     return;
-//   }
-
-//   if (lastClickedButton) {
-//     lastClickedButton.classList.remove('active');
-//   }
-
-//   if (button === allCategoriesButton) {
-//     removeActiveClassFromAllButtons();
-//   } else {
-//     allCategoriesButton.classList.remove('active');
-//   }
-
-//   if (button.classList.contains('js-categories-item')) {
-//     button.classList.add('active');
-//   }
-
-//   lastClickedButton = button;
-// }
-
-// function removeActiveClassFromAllButtons() {
-//   const buttons = categoriesList.querySelectorAll('button');
-
-//   buttons.forEach(button => {
-//     button.classList.remove('active');
-//   });
-// }
-
-// categoriesList.addEventListener('click', event => {
-//   if (!event.target.classList.contains('js-categories-item')) {
-//     event.stopPropagation();
-//   }
-// });
 
 
 
