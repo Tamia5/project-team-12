@@ -1,6 +1,7 @@
 import Swiper from 'swiper';
 import { fetchMasterClass } from './API';
 import { markUp } from './render';
+import 'swiper/css/pagination';
 
 const wrapper = document.querySelector(`.swiper-wrapper`)
 
