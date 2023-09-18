@@ -10,7 +10,7 @@ function markUp(arr) {
       </div>
       <div class="mini-picture-card">
         <div class="mini-picture">
-          <img alt="${name}" width="400" height="500">
+          <img alt="${name}" width="137px">
         </div>
         <p class="dish-name">
           ${name}
@@ -20,7 +20,7 @@ function markUp(arr) {
         </p>
       </div>
       <div class="large-picture">
-        <img src="${imgWebpUrl}" alt="" width="400" height="500">
+        <img src="${imgWebpUrl}" alt="" width="351"">
       </div>
     </div>
   </div>`
