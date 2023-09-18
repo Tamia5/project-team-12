@@ -2,19 +2,21 @@ import { createMarkup, createArea, createIng } from "./render"
 import { fetchAreas, fetchIngredients, fetchRecipe } from "./API"
 import lodash from 'lodash'
 const dobounce = lodash.debounce
-
 const elements = {
     container: document.querySelector(`.categories-container`),
     areaSelect: document.querySelector(`[name="selectArea"`),
     areaIngredients: document.querySelector(`[name="selectIngredients"]`),
     searchForm: document.querySelector(`.search-form`),
     homeBtn: document.querySelector(`.desk-h`),
-    searchBtn: document.querySelector(`.btn-form`)
+    searchBtn: document.querySelector(`.btn-form`),
+    categoriesList: document.querySelector('.js-categories'),
+    allCategoriesButton: document.querySelector('.js-btn-all-categories')
+    
 }
 
                                         // Відмальовка країн та інгредієнтів \\
 fetchAreas()
-    .then(data => {   
+    .then(data => {
         elements.areaSelect.insertAdjacentHTML(`beforeend`, createArea(data))
     })
 fetchIngredients()
@@ -26,7 +28,10 @@ elements.homeBtn.addEventListener(`click`, resetRecipes);
 elements.searchForm.search.addEventListener('input', dobounce(trimSearch, 500));
 elements.searchForm.addEventListener(`change`, changeRecipe);
 elements.searchBtn.addEventListener(`click`, resetRecipes);
+elements.categoriesList.addEventListener("click", selectName);
+elements.allCategoriesButton.addEventListener(`click`, resetCategories)
 window.addEventListener('resize', dobounce(checkMediaQuery, 300));
+
 
 let limit = 6;
 let page = 1;
@@ -47,6 +52,25 @@ function checkMediaQuery() {
       limit = 6;
       startRecipe()
   }
+}
+function selectName(evt) {
+    if (evt.target.textContent === category) {
+        return
+    } else if (evt.target.nodeName != "UL") {
+        category = evt.target.outerText
+        changeClass();
+        evt.target.classList.add(`active`)
+        changeRecipe();
+  }
+}
+function changeClass() {
+    const li = document.querySelectorAll(`.js-categories li`)
+    li.forEach(el=>{ el.classList.remove('active'); });
+}
+function resetCategories(evt) {
+    category = ``;
+    changeClass()
+    changeRecipe()
 }
 
 function startRecipe(evt) {
