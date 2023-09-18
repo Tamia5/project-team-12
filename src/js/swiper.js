@@ -1,36 +1,54 @@
-import Swiper from 'swiper';
+// main.js
 import { fetchMasterClass } from './API';
 import { markUp } from './render';
+
+import Swiper from 'swiper/bundle';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const wrapper = document.querySelector(`.swiper-wrapper`)
+const wrapper = document.querySelector('.swiper-wrraper-hero');
+
+export async function loadData() {
+  try {
+    const events = await fetchMasterClass();
+    const markUpHero = markUp(events);
+    wrapper.innerHTML = markUpHero;
+
+    const heroSwiper = new Swiper('.swiper-hero', {
+      slidesPerView: 0.8,
+      spaceBetween: 40,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+// Ініціалізація слайдера з окремим файлом та розміткою
+const swiperContainer = document.querySelector('.swiper-wrapper');
 
 fetchMasterClass()
   .then(data => {
-    wrapper.innerHTML = markUp(data)
+    if (data.length === 0) {
+      return;
+    }
+    swiperContainer.innerHTML = markUp(data);
+
+    const heroSlider = new Swiper('.swiper-hero', {
+      direction: 'horizontal',
+      loop: true,
+      slidesPerView: 0.8,
+      spaceBetween: 40,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
   })
-  .catch(err => console.log(`Err SWIPER`))
-
-const swiper = new Swiper('.swiper', {
-  direction: 'horizontal',
-  loop: true,
-  speed: 800,
-
-  pagination: {
-    el: '.swiper-pagination',
-    allowSlideNext: true,
-    clickable: true,
-    dynamicBullets: true,
-  },
-  autoplay: {
-    delay: 1500,
-  },
-
-  navigation: {
-    nextEl: '.swiper-btn-next',
-    prevEl: '.swiper-btn-prev',
-  },
-   
-});
+  .catch(err => {
+    console.log(err);
+  });
