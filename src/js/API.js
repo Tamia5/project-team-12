@@ -49,16 +49,19 @@ export { fetchIngredients };
 
 
 // Hero Swiper  
-  function fetchMasterClass() {
-    return fetch(`https://tasty-treats-backend.p.goit.global/api/events`)
-        .then(resp => {
-            if (!resp.ok) {
-                console.log('Error')
-            }
-            return resp.json()
-        })
+// API.js
+function fetchMasterClass() {
+  return fetch(`https://tasty-treats-backend.p.goit.global/api/events`)
+    .then(resp => {
+      if (!resp.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return resp.json();
+    });
 }
-export {fetchMasterClass}
+
+export { fetchMasterClass };
+
 
 // ОТРИМАТИ ПОПУЛЯРНІ РЕЦЕПТИ //
 function getPopRecipes() {

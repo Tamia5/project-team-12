@@ -96,8 +96,7 @@
 
 .swiper {
   position: relative;
-  /* width: 100%; */
-  /* height: 302px; */
+  width: 100%;
   /* overflow: hidden; */
 }
 
@@ -155,13 +154,13 @@
   margin-top: 8px;
 }
 .hero-block-meal {
-  width: 185px;
+  width: auto;
   height: 280px;
   border-radius: 15px;
   background-color: #050505;
 }
 .hero-block-meal-img {
-  height: 100%;
+  height: 280px;
   width: 100%;
   object-fit: cover;
   border-radius: 15px;
@@ -189,6 +188,11 @@
   }
 }
 
-.swiper-slide {
-  display: flex !important;
+
+.swiper .swiper-slide {
+  display: flex;
+}
+.swiper-pagination-bullet-active {
+  background-color: #9bb537 !important;
+
 }
