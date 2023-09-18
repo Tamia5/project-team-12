@@ -113,6 +113,8 @@
 .hero-block-chief {
   width: 80px;
   height: 280px;
+  background-color: #050505;
+  border-radius: 15px;
 }
 .hero-block-chief-img {
   width: 80px;
@@ -123,7 +125,10 @@
 .hero-block-event {
   width: 200px;
   height: 280px;
-  background-color: #050505;
+  background-image: radial-gradient(circle, rgba(155, 181, 55, 0.3) 2%, #050505 100%);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
   border-radius: 15px;
   justify-content: center;
   position: relative;
@@ -153,11 +158,15 @@
   width: 185px;
   height: 280px;
   border-radius: 15px;
+  background-color: #050505;
+
+
 }
 .hero-block-meal-img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  border-radius: 15px;
 }
 
 @media screen and (min-width: 768px) {
