@@ -1,32 +1,63 @@
 // Ехпорт функцій розмітки для своїх блоків
 
 // Hero AH 
-function markUp(arr) {
-  return arr.map(({ cook:{imgUrl }, topic:{imgWebpUrl, name, area, previewUrl} }) =>
-    ` <div class= "swiper-slide">
-    <div class="slider-card">
-      <div class="chief-cook">
-      <img src="${imgUrl}" width="400" height="500">
-      </div>
-      <div class="mini-picture-card">
-        <div class="mini-picture">
-          <img alt="${name}" width="137px">
-        </div>
-        <p class="dish-name">
-          ${name}
-        </p>
-        <p class="country">
-          ${area}
-        </p>
-      </div>
-      <div class="large-picture">
-        <img src="${imgWebpUrl}" alt="" width="351"">
-      </div>
-    </div>
-  </div>`
-  ).join(` `)
+// function markUp(arr) {
+//   return arr.map(({ cook:{imgUrl }, topic:{imgWebpUrl, name, area, previewUrl} }) =>
+//     ` <div class= "swiper-slide">
+//     <div class="slider-card">
+//       <div class="chief-cook">
+//       <img src="${imgUrl}" width="400" height="500">
+//       </div>
+//       <div class="mini-picture-card">
+//         <div class="mini-picture">
+//           <img alt="${name}" width="137px">
+//         </div>
+//         <p class="dish-name">
+//           ${name}
+//         </p>
+//         <p class="country">
+//           ${area}
+//         </p>
+//       </div>
+//       <div class="large-picture">
+//         <img src="${imgWebpUrl}" alt="" width="351"">
+//       </div>
+//     </div>
+//   </div>`
+//   ).join(` `)
+// }
+// export {markUp} 
+export function markUp(arr) {
+  return arr
+    .map(
+      ({ cook, topic }) => `
+                <div class="swiper-slide hero-event">
+                        <div class="hero-block-chief">
+                            <picture>
+                                <source srcset="${cook.imgWebpUrl}" type="image/webp" />
+                                <img class="hero-block-chief-img" src="${cook.imgUrl}" alt="${cook.name}" loading="lazy" />
+                            </picture>
+                        </div>
+                        <div class="hero-block-event">
+                    
+                                <picture>
+                                    <source srcset="${topic.previewWebpUrl}" type="image/webp" />
+                                    <img class="hero-block-event-img" src="${topic.previewUrl}" alt="${topic.name}" loading="lazy" />
+                                </picture>
+                                <p class="hero-block-title">${topic.name}</p>
+                                <p class="hero-block-text">${topic.area}</p>
+                        
+                        </div>
+                        <div class="hero-block-meal">
+                            <picture>
+                                <source srcset="${topic.imgWebpUrl}" type="image/webp" />
+                                <img class="hero-block-meal-img" src="${topic.imgUrl}" alt="${topic.name}" loading="lazy" />
+                            </picture>
+                        </div>
+                    </div>`
+    )
+    .join('');
 }
-export {markUp} 
 // Search-recipes
                 // ВІДМАЛЬОВКА КАРТОЧОК \\
 function createMarkup(arr) {
