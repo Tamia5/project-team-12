@@ -5,7 +5,7 @@
       </div>
       <div class="mini-picture-card">
         <div class="mini-picture">
-          <img alt="${o}" width="400" height="500">
+          <img alt="${o}" width="137px">
         </div>
         <p class="dish-name">
           ${o}
@@ -15,7 +15,7 @@
         </p>
       </div>
       <div class="large-picture">
-        <img src="${r}" alt="" width="400" height="500">
+        <img src="${r}" alt="" width="351"">
       </div>
     </div>
   </div>`).join(" ")}function al(s){return s.map(({description:i,preview:r,rating:o,tags:f,title:u})=>`<li class="categories-list">
