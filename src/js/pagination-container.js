@@ -1,10 +1,8 @@
 
-
 const paginationContainer = document.querySelector('.js-pagination');
 
 function updatePagination() {
   paginationContainer.innerHTML = '';
-
   const pagesToShow = 3;
 
   let startPage = Math.max(currentPage - Math.floor(pagesToShow / 2), 1);
@@ -50,13 +48,6 @@ paginationContainer.addEventListener('click', event => {
   } else if (target.classList.contains('js-page')) {
     currentPage = parseInt(target.getAttribute('data-page'));
   }
-    // fetchMovies(currentPage);
+    fetchMovies(currentPage);
   
 });
-
-// fetchMovies(currentPage);
-
-
-
-// визвать функцию  updatePagination();
-// fetchMovies(currentPage);замінити на іншу назву функціі
