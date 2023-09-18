@@ -77,14 +77,10 @@ function createIng(arr) {
 export { createIng }
 
 // ВІДМАЛЬОВКА КАТЕГОРІЙ \\
-
-function renderCategories(categories, categoriesList) {
-  if (categoriesList) {
-    const markup = categories.map(category => {
-      return `<li class="js-categories-item">${category.name}</li>`;
-    }).join('');
-    categoriesList.innerHTML = markup;
-  }
+function renderCategories(arr) {
+    return arr.map(({ _id, name }) => `
+    <li class="js-categories-item" value="${_id}">${name}</li>
+    `).join(``)
 }
+export { renderCategories }
 
-export { renderCategories };
