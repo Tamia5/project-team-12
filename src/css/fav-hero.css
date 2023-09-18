@@ -1,0 +1,103 @@
+
+
+
+
+@media screen and (min-device-pixel-ratio: 1) and (min-width: 375px) and (max-width: 768px),
+  screen and (min-resolution: 96dpi) and (min-width: 375px) and (max-width: 768px),
+  screen and (min-resolution: 1dppx) and (min-width: 375px) and (max-width: 768px) {
+  .image-fav {
+    width: 335px;
+    height: 516px;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/card@1xmob.jpg);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: fixed;
+
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 375px) and (max-width: 768px),
+  screen and (min-resolution: 192dpi) and (min-width: 375px) and (max-width: 768px),
+  screen and (min-resolution: 2dppx) and (min-width: 375px) and (max-width: 768px) {
+  .image-fav {
+    width: 335px;
+    height: 516px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/card@2xmob.jpg);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: fixed;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 1) and (min-width: 768px) and (max-width: 1199px),
+  screen and (min-resolution: 96dpi) and (min-width: 768px) and (max-width: 1199px),
+  screen and (min-resolution: 1dppx) and (min-width: 768px) and (max-width: 1199px) {
+  .image-fav {
+    width: 704px;
+    height: 356px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/card@1xtab.jpg);
+    border-radius: 15px;
+    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-top: 42px;
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px) and (max-width: 1199px),
+  screen and (min-resolution: 192dpi) and (min-width: 768px) and (max-width: 1199px),
+  screen and (min-resolution: 2dppx) and (min-width: 768px) and (max-width: 1199px) {
+  .image-fav {
+    width: 704px;
+    height: 356px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/card@2xdtab.jpg);
+    border-radius: 15px;
+   background-repeat: no-repeat;
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 1) and (min-width: 1200px),
+  screen and (min-resolution: 96dpi) and (min-width: 1200px),
+  screen and (min-resolution: 1dppx) and (min-width: 1200px) {
+  .image-fav {
+    width: 1080px;
+    height: 356px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/carddesc.jpg);
+    border-radius: 15px;
+
+    display: flex; 
+   align-items: center;
+    justify-content: center;  
+    background-position: center;
+margin-top: 42px; 
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 1200px),
+  screen and (min-resolution: 192dpi) and (min-width: 1200px),
+  screen and (min-resolution: 2dppx) and (min-width: 1200px) {
+  .image-fav {
+    width: 1080px;
+    height: 356px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url(../images/card@2xdesc.jpg);
+    border-radius: 15px;
+    display: flex;
+   align-items: center;
+    background-position: center;
+    padding-top: 50px;
+  }
+}
