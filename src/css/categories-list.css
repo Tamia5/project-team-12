@@ -1,15 +1,15 @@
 .categories {
   min-width: 320px;
-  max-width: 375px;
-  margin-bottom: 40px;
-  margin: 0 auto;
+  max-width: 375px;;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 20px;
 }
 
 .left-site {
   font-family: 'Inter';
   width: 100%;
-  margin-bottom: 40px;
 }
 
 .all-categories-btn {
@@ -21,8 +21,8 @@
   border: 1px solid var(--input-color);
   border-radius: 15px;
 
-  margin-bottom: 40px;
-
+  margin-bottom: 30px;
+  
   line-height: 0.82;
   font-weight: 500;
   font-size: 18px;
@@ -41,10 +41,8 @@
 .js-categories {
   overflow-y: scroll;
   height: 198px;
+   padding: 0px;
 
-  margin-bottom: 64px;
-
-  padding: 0px;
 }
 
 .js-categories-item {
@@ -56,7 +54,12 @@
   transition: all cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.js-categories-item:hover,
+
+.active{
+   color: var(--accent-text-color); 
+}
+
+.js-categories-item:hover, 
 .js-categories-item:focus {
   color: var(--accent-text-color);
   cursor: pointer;
@@ -85,14 +88,13 @@
 
 @media screen and (min-width: 768px) {
   .categories {
-    max-width: 176px;
-    padding: 0;
-    min-width: 176px;
+
+    max-width: 768px;
+    padding: 0 32px;
+    margin-bottom: 56px;
   }
   .left-site {
-    max-width: 208px;
-    padding: 0 0 0 32px;
-    margin-bottom: 0;
+      width: 176px;
   }
 
   .js-categories {
@@ -110,9 +112,10 @@
 
 @media screen and (min-width: 1200px) {
   .categories {
-    max-width: 234px;
-    padding: 0;
-    min-width: 234px;
+    max-width: 1105px;
+    margin-bottom: 64px;
+    padding: 0 12px;
+
   }
   .left-site {
     max-width: 337px;

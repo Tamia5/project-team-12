@@ -1,5 +1,6 @@
 // Імпортувати сюди всі функції запитів
 const url = `https://tasty-treats-backend.p.goit.global/api/recipes`;
+const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api/categories';
 
 // ЗАПИТ ВСІХ РЕЦЕПТІВ //
 function fetchRecipe(limit, page, category, time, area, ingredient) {
@@ -73,4 +74,28 @@ function getPopRecipes() {
     });
 }
 export { getPopRecipes };
+
+// all-categories//
+
+async function getCategoriesFromAPI() {
+  try {
+    const response = await fetch(BASE_URL);
+    if (!response.ok) {
+      throw new Error('Failed to fetch categories');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export { getCategoriesFromAPI };
+  
+
+
+
+
+
+
 
