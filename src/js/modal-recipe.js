@@ -132,3 +132,5 @@
 // seeRecipeButton.forEach(button => {
 //   button.addEventListener('click', openModal);
 // });
+
+
