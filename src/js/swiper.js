@@ -16,7 +16,7 @@ export async function loadData() {
     wrapper.innerHTML = markUpHero;
 
     const heroSwiper = new Swiper('.swiper-hero', {
-      slidesPerView: 0.8,
+      slidesPerView: 0.7,
       spaceBetween: 40,
       pagination: {
         el: '.swiper-pagination',
@@ -41,7 +41,7 @@ fetchMasterClass()
     const heroSlider = new Swiper('.swiper-hero', {
       direction: 'horizontal',
       loop: true,
-      slidesPerView: 0.8,
+      slidesPerView: 0.7,
       spaceBetween: 40,
       pagination: {
         el: '.swiper-pagination',

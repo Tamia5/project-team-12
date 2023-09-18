@@ -125,9 +125,6 @@
     rgba(155, 181, 55, 0.3) 2%,
     #050505 100%
   );
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: overlay;
   border-radius: 15px;
   justify-content: center;
   position: relative;
@@ -160,7 +157,7 @@
   background-color: #050505;
 }
 .hero-block-meal-img {
-  height: 280px;
+  height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: 15px;
