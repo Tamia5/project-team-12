@@ -1,42 +1,9 @@
-@media screen and (max-width: 768px) {
-  .popular-recipes-container {
-    width: 335px;
-    margin: 0 auto;
-    order: 3;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .popular-recipes-container {
-    width: 176px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .popular-recipes-container {
-    width: 235px;
-  }
-}
-
 .popular-recipes-title {
   text-transform: uppercase;
   text-align: left;
   font-size: 18px;
   margin-bottom: 40px;
   color: var(--main-title-text-color);
-}
-
-@media screen and (min-width: 768px) {
-  .popular-recipes-title {
-    font-size: 18px;
-    margin-bottom: 32px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .popular-recipes-title {
-    font-size: 24px;
-    margin-bottom: 40px;
-  }
 }
 
 .popular-recipes-list {
@@ -48,41 +15,18 @@
   display: flex;
   gap: 16px;
 }
+.popular-recipes-item:nth-child(n + 3) {
+  display: none;
+}
 
 .popular-recipes-list .popular-recipes-item {
   cursor: pointer;
-}
-
-@media screen and (min-width: 768px) {
-  .popular-recipes-item {
-    margin-bottom: 16px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .popular-recipes-item {
-    margin-bottom: 32px;
-  }
 }
 
 .popular-recipes-image {
   width: 64px;
   height: 64px;
   border-radius: 8px;
-}
-
-@media screen and (min-width: 768px) {
-  .popular-recipes-image {
-    width: 48px;
-    height: 48px;
-  }
-}
-
-@media screen and (min-width: 1110px) {
-  .popular-recipes-image {
-    width: 64px;
-    height: 64px;
-  }
 }
 
 .popular-recipes-item-title {
@@ -106,9 +50,55 @@
   overflow: hidden;
 }
 
+/*---- Tablet and desktop ----*/
+@media screen and (max-width: 768px) {
+  .popular-recipes-container {
+    width: 335px;
+    margin: 0 auto;
+    order: 3;
+  }
+}
+
 @media screen and (min-width: 768px) {
+  .popular-recipes-container {
+    width: 176px;
+  }
+  .popular-recipes-title {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+  .popular-recipes-item {
+    margin-bottom: 16px;
+  }
+  .popular-recipes-item:nth-child(n + 3) {
+    display: flex;
+  }
+  .popular-recipes-image {
+    width: 48px;
+    height: 48px;
+  }
   .popular-recipes-item-description {
     font-size: 10px;
     -webkit-line-clamp: 3;
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  .popular-recipes-image {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .popular-recipes-item {
+    margin-bottom: 32px;
+  }
+  .popular-recipes-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+  .popular-recipes-container {
+    width: 235px;
   }
 }
