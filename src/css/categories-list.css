@@ -31,6 +31,7 @@
   transition: all 500ms;
 }
 
+.active-btn,
 .all-categories-btn:hover,
 .all-categories-btn:focus {
   background-color: #9bb537;
