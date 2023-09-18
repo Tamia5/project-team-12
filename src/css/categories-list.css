@@ -1,17 +1,6 @@
 .categories {
-  min-width: 320px;
-  max-width: 375px;;
-  margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
+  padding: 0;
 }
-
-.left-site {
-  font-family: 'Inter';
-  width: 100%;
-}
-
 .all-categories-btn {
   width: 174px;
   height: 50px;
@@ -22,7 +11,7 @@
   border-radius: 15px;
 
   margin-bottom: 30px;
-  
+
   line-height: 0.82;
   font-weight: 500;
   font-size: 18px;
@@ -41,8 +30,7 @@
 .js-categories {
   overflow-y: scroll;
   height: 198px;
-   padding: 0px;
-
+  padding: 0px;
 }
 
 .js-categories-item {
@@ -54,12 +42,11 @@
   transition: all cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
-.active{
-   color: var(--accent-text-color); 
+.active {
+  color: var(--accent-text-color);
 }
 
-.js-categories-item:hover, 
+.js-categories-item:hover,
 .js-categories-item:focus {
   color: var(--accent-text-color);
   cursor: pointer;
@@ -87,18 +74,13 @@
 ===============================================*/
 
 @media screen and (min-width: 768px) {
-  .categories {
-
-    max-width: 768px;
-    padding: 0 32px;
-    margin-bottom: 56px;
-  }
-  .left-site {
-      width: 176px;
-  }
-
   .js-categories {
     height: 416px;
+  }
+  .left-site {
+    padding-top: 26px;
+    min-width: auto;
+    width: 176px;
   }
 
   .js-categories::-webkit-scrollbar-thumb {
@@ -108,22 +90,15 @@
   .js-categories-item {
     margin-top: 24px;
   }
+  .all-categories-btn {
+    margin-bottom: 35px;
+  }
 }
-
-@media screen and (min-width: 1200px) {
-  .categories {
-    max-width: 1105px;
-    margin-bottom: 64px;
-    padding: 0 12px;
-
-  }
+@media only screen and (min-width: 1280px) {
   .left-site {
-    max-width: 337px;
-    padding: 0 0 0 100px;
-    margin-bottom: 0;
+    width: 235px;
   }
-
-  .js-categories {
-    width: 234px;
+  .categories {
+    min-width: 235px;
   }
 }

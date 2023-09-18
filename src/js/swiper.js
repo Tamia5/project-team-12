@@ -1,7 +1,6 @@
 import Swiper from 'swiper';
 import { fetchMasterClass } from './API';
 import { markUp } from './render';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -33,4 +32,5 @@ const swiper = new Swiper('.swiper', {
     nextEl: '.swiper-btn-next',
     prevEl: '.swiper-btn-prev',
   },
+   
 });

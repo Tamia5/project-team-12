@@ -1,48 +1,21 @@
 .right-site {
-  font-family: 'Inter';
-
-  width: 95%;
-  min-width: 320px;
-  max-width: 375px;
-
-  margin: 0 auto;
-  padding: 0 20px;
+  margin-top: 40px;
 }
 @media only screen and (min-width: 768px) {
   .right-site {
-    width: 100%;
-    max-width: 528px;
-
-    padding: 0 20px 0 0;
+    width: 527px;
     margin: 0 0 0 32px;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
   .right-site {
-    max-width: 882px;
-
-    padding: 0 100px 0 0;
-    margin: 0 0 0 64px;
+    width: 846px;
+    margin: 0 0 0 63px;
   }
 }
-/* @media only screen and (min-width: 768px) {
-  .container {
-    display: flex;
-  }
-} */
 .search-form {
   display: flex;
   flex-wrap: wrap;
-}
-@media only screen and (min-width: 768px) {
-  .search-form {
-    width: 419px;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .search-form {
-    width: 782px;
-  }
 }
 select {
   -webkit-appearance: none;
@@ -137,6 +110,12 @@ select {
 @media only screen and (min-width: 768px) {
   .search-input {
     height: 48px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .search-input {
+    width: 278px;
+    min-width: auto;
   }
 }
 
@@ -291,13 +270,17 @@ select {
 @media only screen and (min-width: 768px) {
   .categories-list {
     height: 264px;
-    width: 246px;
+    width: 240px;
   }
 }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
   .categories-list {
     height: 287px;
     width: 250px;
+  }
+  .categories-container {
+    column-gap: 16px;
+    row-gap: 20px;
   }
 }
 .categories-link {

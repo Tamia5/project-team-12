@@ -1,37 +1,9 @@
-// Ехпорт функцій розмітки для своїх блоків
 
-// Hero AH 
-// function markUp(arr) {
-//   return arr.map(({ cook:{imgUrl }, topic:{imgWebpUrl, name, area, previewUrl} }) =>
-//     ` <div class= "swiper-slide">
-//     <div class="slider-card">
-//       <div class="chief-cook">
-//       <img src="${imgUrl}" width="400" height="500">
-//       </div>
-//       <div class="mini-picture-card">
-//         <div class="mini-picture">
-//           <img alt="${name}" width="137px">
-//         </div>
-//         <p class="dish-name">
-//           ${name}
-//         </p>
-//         <p class="country">
-//           ${area}
-//         </p>
-//       </div>
-//       <div class="large-picture">
-//         <img src="${imgWebpUrl}" alt="" width="351"">
-//       </div>
-//     </div>
-//   </div>`
-//   ).join(` `)
-// }
-// export {markUp} 
 export function markUp(arr) {
   return arr
     .map(
       ({ cook, topic }) => `
-                <div class="swiper-slide hero-event">
+                <div class=" hero-event swiper-slide">
                         <div class="hero-block-chief">
                             <picture>
                                 <source srcset="${cook.imgWebpUrl}" type="image/webp" />
@@ -61,7 +33,6 @@ export function markUp(arr) {
 // Search-recipes
                 // ВІДМАЛЬОВКА КАРТОЧОК \\
 import sprite from '/icons.svg'
-console.log(sprite)
 
 function createMarkup(arr) {
     return arr.map(({ description, preview, rating, tags, title, }) =>
