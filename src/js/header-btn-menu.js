@@ -25,7 +25,7 @@
     openMenuBtn.setAttribute('aria-expanded', false);
     // bodyScrollLock.enableBodyScroll(document.body);
   });
-})();})();
+})();
 // Current page
 const currentPage = window.location.pathname;
 const navLinks = document.querySelectorAll('.nav-link');
