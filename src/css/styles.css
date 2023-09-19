@@ -8,8 +8,7 @@
 @import url('./search-recipes.css');
 @import url('./paginatin.css');
 @import url('./modal-resipe.css');
-
-
+@import url('./dark-theme.css');
 
 :root {
   --main-background-color: #f8f8f8;

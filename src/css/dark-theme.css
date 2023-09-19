@@ -1,0 +1,134 @@
+.dark {
+  background-color: #161616;
+  transition: background-color 500ms;
+
+  .popular-recipes-item-title,
+  .nav-link,
+  .dark-part,
+  .title,
+  .hero-text,
+  .popular-recipes-title,
+  .order-form-title {
+    color: var(--white-text-color);
+  }
+
+  .popular-recipes-item-description,
+  .subtitle-text {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .svg-shopping-cart {
+    stroke: var(--white-text-color);
+  }
+  .svg-shopping-cart:hover,
+  .svg-shopping-cart:focus {
+    stroke: var(--accent-text-color);
+  }
+  .btnOrderNow {
+    background-color: transparent;
+    color: var(--white-text-color);
+  }
+
+  .btnOrderNow:hover,
+  .btnOrderNow:focus,
+  .all-categories-btn:hover,
+  .all-categories-btn:focus {
+    border: 1px solid var(--accent-text-color);
+    background-color: var(--accent-text-color);
+    color: var(--white-text-color);
+  }
+
+  .hamburger-svg,
+  .order-close-icon {
+    stroke: var(--white-text-color);
+  }
+
+  .swiper-pagination-bullet {
+    background-color: var(--white-text-color);
+    opacity: 1;
+  }
+
+  .search-label,
+  .time-form,
+  .area-form,
+  .ingr-form,
+  .js-categories-item,
+  .number-rating,
+  .order-form-label,
+  .btn-form {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .js-categories-item:focus,
+  .js-categories-item:hover {
+    color: var(--accent-text-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .select-ing,
+  .seleact-area,
+  .select-time,
+  .search-input,
+  .all-categories-btn {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .select-ing:hover,
+  .seleact-area:hover,
+  .select-time:hover,
+  .select-ing:focus,
+  .seleact-area:focus,
+  .select-time:focus,
+  .search-input:focus,
+  .search-input:focus {
+    color: var(--white-text-color);
+    border-color: var(--white-text-color);
+  }
+
+  /* select,
+  option,
+  option:checked,
+  option:hover {
+    background-color: var(--main-title-text-color);
+    color: var(--white-text-color);
+  } */
+
+  .icon-search {
+    stroke: var(--white-text-color);
+    fill: var(--white-text-color);
+    opacity: 0.5;
+  }
+
+  .select-icon {
+    stroke: var(--white-text-color);
+    opacity: 0.5;
+  }
+
+  .search-input:focus,
+  .search-input:hover + .icon-search {
+    stroke: var(--accent-text-color);
+  }
+
+  .modal {
+    background-color: var(--main-title-text-color);
+  }
+
+  .order-form-input {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .order-form-input:hover,
+  .order-form-input:focus {
+    color: var(--white-text-color);
+  }
+}
