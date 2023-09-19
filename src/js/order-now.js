@@ -1,3 +1,4 @@
+import axios from "axios";
 const refs = {
   backdrop: document.querySelector(".order-backdrop"),
   openModalBtn: document.querySelector(".order-btn"),
@@ -24,61 +25,44 @@ refs.closeModalBtn.addEventListener("click", () => {
     refs.modal.classList.add("is-hidden");
     refs.backdrop.classList.add("is-hidden");
     refs.form.reset();
-
 });
-// refs.sendBtn.addEventListener("click", formSubmit)
-// function formSubmit(){
-    refs.form.addEventListener('submit', (e) => {
-        e.preventDefault();
+refs.form.addEventListener('submit', async (e) => {
+  e.preventDefault();
         
-// const nameInput = refs.form.querySelector('[name="user-name"]');
-//   const telInput = refs.form.querySelector('[name="tel"]');
-//   const emailInput = refs.form.querySelector('[name="email"]');
-//   const commentInput = refs.form.querySelector('[name="user-comment"]');
-
   const name = refs.nameInput.value;
-  const tel = refs.phoneInput.value;
+  const phone = refs.phoneInput.value;
   const email = refs.emailInput.value;
   const comment = refs.commentInput.value;
+  // Validation
+  //         if (!name.match(/[A-Za-z\s]{3,}/) || !phone.match(/^[0-9]{10}$/) || !email.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/)) {
+  //     alert('Please enter valid data.');
+  //     return;
+  // }
   
-//     const data = {
-//     name,
-//     tel,
-//     email,
-//     comment,
-//   };
-        let data;
-         
-    fetch("https://tasty-treats-backend.p.goit.global/api-docs/orders/add", {
-    method: "POST",
-        headers: {
-        "accept": "application/json",
-            // ; charset=UTF-8
-      "Content-Type": "application/json",
-        },
-    body: JSON.stringify( data = {
-    name,
-    tel,
-    email,
-    comment,
-  }),
-    }).then(response => {
-         if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    }).then((responseData) => {
-      console.log('Data sent successfully:', responseData);
-    }).catch((error) => {
+    const data = {
+      name,
+      phone,
+      email,
+      comment
+  };
 
-  console.error('There was a problem with the fetch operation:', TypeError);
-//   console.log('Response from server:', response);
-    });
-        // Validation
-            if (!name.match(/[A-Za-z\s]{3,}/) || !tel.match(/^[0-9]{10}$/) || !email.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/)) {
-        alert('Please enter valid data.');
-        return;
+  axios.post('https://tasty-treats-backend.p.goit.global/api-docs/orders/add', data, {
+    headers: {
+      'Content-Type': 'application/json'
     }
-});
+  })
+    .catch(function (error) {
+      if (error.response) {
 
-    refs.form.reset();
+        console.log(error.response.data);
+        console.log(error.response.status);
+   
+      } else if (error.request) {
+        console.log(error.request);
+      } else {
+        console.log('Error', error.message);
+      }
+      console.log(error.config);
+    })
+  refs.form.reset();
+});
