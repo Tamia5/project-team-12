@@ -8,10 +8,16 @@
     width: 14px;
     height: 14px;
     position: absolute;
-    right: 16px;
-    top: 16px;
+    right: 14px;
+    top: 14px;
     border-color: transparent;
     background-color: transparent;
+}
+@media only screen and (min-width: 768px) {
+    .order-close-btn {
+        right: 16px;
+        top: 16px;
+    }
 }
 
 .order-close-icon {
@@ -19,6 +25,7 @@
     transform: translate(-50%, -50%);
     position: absolute;
     fill: black;
+    stroke: black;
     -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 z-index: 1;
@@ -26,6 +33,7 @@ z-index: 1;
 
 .backdrop {
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
@@ -62,7 +70,12 @@ position: fixed;
 
 .wrapper {
     min-height: 100%;
-    padding: 20px;
+    padding: 28px 20px;
+}
+@media only screen and (min-width: 768px) {
+    .wrapper {
+       padding: 40px;
+    }
 }
 
 .order-form {
@@ -82,13 +95,32 @@ position: fixed;
     margin-bottom: 28px;
 }
 
-.order-form-element {
-    margin-bottom: 18px;
+@media only screen and (min-width: 768px) {
+    .order-form-title{
+        margin-bottom: 40px;
+    }
+}
+
+
+.order-form-element{
+    margin-bottom: 16px;
     height: 46px;
     border-radius: 15px;
     border: 1px solid var(--input-color);
 }
+.order-form-element:last-child {
+    height: 100px;
+}
+@media only screen and (min-width: 768px) {
+    .order-form-element {
+        margin-bottom: 18px;
+    }
+}
 
+
+.comment {
+    height: 100px;
+}
 .order-form-label{
         margin-bottom: 8px;
 }
@@ -117,6 +149,7 @@ label {
 
 textarea{
     resize: none;
+    /* min-height: 100px; */
 }
 
 .order-form-input {
@@ -171,6 +204,9 @@ height: 100%;
         line-height: 1.125;
         margin-bottom: 4px;
 }
+.rating-open-btn{
+    opacity: 0;
+}
 .rating-close-btn{
     position: absolute;
 right: 16px;
@@ -184,6 +220,7 @@ right: 16px;
             transform: translate(-50%, -50%);
             position: absolute;
             fill: black;
+            stroke: black;
             -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
             transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1;
