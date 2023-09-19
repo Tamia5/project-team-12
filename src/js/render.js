@@ -81,7 +81,7 @@ function createMarkup(arr) {
             <svg class="svg-rating" >
                 <use href='${sprite}#rating'></use>
             </svg>
-             <button class="categories-btn">See recipe</button>
+             <button class="categories-btn" data-modal-open-recipe>See recipe</button>
         </div>
        
     </a>
