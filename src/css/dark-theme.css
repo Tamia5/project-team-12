@@ -131,4 +131,8 @@
   .order-form-input:focus {
     color: var(--white-text-color);
   }
+
+  .current {
+    color: #9bb537;
+  }
 }
