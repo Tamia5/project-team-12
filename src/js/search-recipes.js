@@ -1,7 +1,14 @@
 import { createMarkup, createArea, createIng } from "./render"
 import { fetchAreas, fetchIngredients, fetchRecipe } from "./API"
+import {updatePagination} from "./pagination-container"
 import lodash from 'lodash'
 const dobounce = lodash.debounce
+// контейнер для погінаціі
+// const paginationContainer = document.querySelector('.js-pagination');
+// переменні для пагінаціі
+let currentPage = 1;
+let totalPages = 40;
+
 const elements = {
     container: document.querySelector(`.categories-container`),
     areaSelect: document.querySelector(`[name="selectArea"`),
@@ -76,11 +83,17 @@ function resetCategories(evt) {
 function startRecipe(evt) {
 fetchRecipe(limit, page, category, time, area, ingredient)
     .then(data => { 
-    elements.container.innerHTML = createMarkup(data.results)
+        // добавила визов функции та присвоїла данні 
+        currentPage = data.page;
+        totalPages = data.totalPages;
+        console.log(currentPage)
+        elements.container.innerHTML = createMarkup(data.results)
+        updatePagination();
     })
     .catch(err => console.log(`err`))
 }
 
+export {startRecipe};
 function trimSearch(evt) {
     evt.preventDefault();
     category = elements.searchForm.search.value.trim();
@@ -113,4 +126,5 @@ function resetRecipes(evt) {
     ingredient = ``;
     startRecipe()
 }   
+
 
