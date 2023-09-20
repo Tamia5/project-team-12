@@ -110,27 +110,24 @@
   margin-right: 15px;
 }
 .favorite-categories {
-  margin-top: 64px;
+  margin-top: 64px; /* Змінено для десктопу і планшета */
   width: 100%;
   display: flex;
-  overflow-x: auto; 
-  padding-bottom: 15px;
-  scrollbar-width: thin; 
-  scrollbar-color: rgba(5, 5, 5, 0.18) transparent; 
+  padding-bottom: 15px; /* Збережено простір внизу для видимого скрола */
+  overflow-x: auto; /* Додано горизонтальний скрол */
+  white-space: nowrap; /* Заборонено переносити кнопки на новий ряд */
 }
 
 .js-favorite-categories {
   display: flex;
   gap: 15px;
-  padding-right: 15px;
   list-style: none;
   margin: 0;
   padding: 0;
-  flex-wrap: nowrap; 
 }
 
 @media screen and (max-width: 768px) {
   .favorite-categories {
-    margin-top: 32px; 
+    margin-top: 32px; /* Змінено для мобільного */
   }
 }
