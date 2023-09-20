@@ -9,6 +9,7 @@
 @import url('./paginatin.css');
 @import url('./modal-resipe.css');
 @import url('./dark-theme.css');
+@import url('./fav-hero.css');
 
 :root {
   --main-background-color: #f8f8f8;
