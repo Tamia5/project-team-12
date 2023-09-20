@@ -18,3 +18,17 @@
   background-color: #9bb537;
   color: black;
 }
+
+.js-first-page,
+.js-previous-page{
+  background-color:var(--black-text-color);
+  color: rgba(248, 248, 248, 0.50);
+}
+
+.js-next-page,
+.js-last-page {
+  background-color: var(--button-color);
+  color: var(--black-text-color);
+  border: 1px solid transparent;
+
+}
