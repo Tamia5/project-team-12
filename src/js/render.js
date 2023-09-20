@@ -85,15 +85,14 @@ function renderCategories(arr) {
 export { renderCategories }
 
 // FAVORITE CATEGORIES//
-function createFavoriteCategoryButtons(uniqueCategories) {
-  const categoryButtons = uniqueCategories.map((category) => {
-    return `
-      <li><button>${category}</button></li>
-    `;
-  });
+// function createFavoriteCategoryButtons(uniqueCategories) {
+//   const categoryButtons = uniqueCategories.map((category) => {
+//     return `
+//       <li><button>${category}</button></li>
+//     `;
+//   });
 
-  return categoryButtons.join('');
-}
-export { createFavoriteCategoryButtons };
+//   return categoryButtons.join('');
+// }
+// export { createFavoriteCategoryButtons };
 
-export const seeRecipeButton = document.querySelector('.categories-btn');

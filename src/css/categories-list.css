@@ -105,11 +105,32 @@
 /*=============================================
 =         favorite categories                =
 ===============================================*/
-.js-faforite-categories-btn {
-  display: none;
+.all-categories-btn.js-favorite-categories-btn {
+
+  margin-right: 15px;
 }
+.favorite-categories {
+  margin-top: 64px;
+  width: 100%;
+  display: flex;
+  overflow-x: auto; 
+  padding-bottom: 15px;
+  scrollbar-width: thin; 
+  scrollbar-color: rgba(5, 5, 5, 0.18) transparent; 
+}
+
 .js-favorite-categories {
   display: flex;
   gap: 15px;
-  overflow: auto;
+  padding-right: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap; 
+}
+
+@media screen and (max-width: 768px) {
+  .favorite-categories {
+    margin-top: 32px; 
+  }
 }
