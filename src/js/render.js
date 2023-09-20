@@ -83,11 +83,17 @@ function renderCategories(arr) {
     `).join(``)
 }
 export { renderCategories }
-// FAVORITE CATEGORIES//
-function renderFavoriteCategories(categories) {
-    return categories.map(({ _id, name }) => `
-    <button class="all-categories-button js-favorite-button" value="${_id}">${name}</button>
-    `).join(``)
-}
-export { renderFavoriteCategories }
 
+// FAVORITE CATEGORIES//
+function createFavoriteCategoryButtons(uniqueCategories) {
+  const categoryButtons = uniqueCategories.map((category) => {
+    return `
+      <li><button>${category}</button></li>
+    `;
+  });
+
+  return categoryButtons.join('');
+}
+export { createFavoriteCategoryButtons };
+
+export const seeRecipeButton = document.querySelector('.categories-btn');

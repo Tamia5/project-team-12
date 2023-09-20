@@ -102,3 +102,14 @@
     min-width: 235px;
   }
 }
+/*=============================================
+=         favorite categories                =
+===============================================*/
+.js-faforite-categories-btn {
+  display: none;
+}
+.js-favorite-categories {
+  display: flex;
+  gap: 15px;
+  overflow: auto;
+}
