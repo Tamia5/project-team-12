@@ -95,8 +95,26 @@ async function getCategoriesFromAPI() {
 export { getCategoriesFromAPI };
   
 
+//MODAL RECIPE DETAILS 
 
+async function getRecipesById(id) {
+  const GET_RECIPE_BY_ID_URL = `${url}/${id}`;
 
+  try {
+    const response = await fetch(GET_RECIPE_BY_ID_URL);
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch recipe with ID ${id}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+export { getRecipesById }
 
 
 
