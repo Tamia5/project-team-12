@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,13 +11,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500&family=Inter:wght@400;500;600&family=Poppins:wght@600&display=swap"
         rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css" />
     <link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     
-  <link rel="stylesheet" href="/project-team-12/assets/styles-1056cc71.css">
+  <script type="module" crossorigin src="/project-team-12/assets/favorite-ae07f404.js"></script>
+  <link rel="modulepreload" crossorigin href="/project-team-12/assets/styles-05823a0a.js">
+  <link rel="stylesheet" href="/project-team-12/assets/styles-9c02fe19.css">
 </head>
+
 <body>
     <header class="header">
   <div class="header-container container">
@@ -38,7 +42,7 @@
     <div class="header-svg">
       <a href="tel:+380730000000" class="btn-shopping-cart link">
         <svg class="svg-shopping-cart" width="24" height="24">
-          <use href="/project-team-12/assets/icons-c86fd841.svg#icon-shopping-cart"></use>
+          <use href="/project-team-12/assets/icons-75c78b7c.svg#icon-shopping-cart"></use>
         </svg>
       </a>
 
@@ -49,7 +53,7 @@
 
       <button class="header-btn-hamburger" type="button">
         <svg class="hamburger-svg">
-          <use href="/project-team-12/assets/icons-c86fd841.svg#icon-hamburger"></use>
+          <use href="/project-team-12/assets/icons-75c78b7c.svg#icon-hamburger"></use>
         </svg>
       </button>
     </div>
@@ -61,7 +65,7 @@
 <div class="header-mobile-menu">
   <button class="header-btn-close">
     <svg class="header-btn-close-svg">
-      <use href="/project-team-12/assets/icons-c86fd841.svg#icon-x"></use>
+      <use href="/project-team-12/assets/icons-75c78b7c.svg#icon-x"></use>
     </svg>
   </button>
   <nav class="header-mobile-nav">
@@ -82,39 +86,32 @@
   </div>
 </div>
 
-  
+
     <main>
-        <div class="section-fav-hero">
-    <div class="container hero-container">
-      <picture class="favorite-image">
-        <source media="(min-width:1280px)" srcset="/project-team-12/assets/carddesc-a1a7878d.jpg 1x, /project-team-12/assets/card@2xdesc-c87b0515.jpg 2x">
-        <source media="(min-width:768px)" srcset="/project-team-12/assets/cardtab@1-57cf42a7.png 1x">
-        <source media="(max-width:767px)" srcset="/project-team-12/assets/card@1xmob-d9ef4916.jpg 1x, /project-team-12/assets/card@2xmob-18c430c1.jpg 2x">
-        <img class="image-fav" src="../images/card@1xmob.jpg" alt="Favorite food" loading="lazy">
-      </picture>
-    </div>
+        <section class="fav-hero">
+            <div class="section-fav-hero container">
+  <div class=" hero-container">
+    <picture class="favorite-image">
+      <source media="(min-width:1280px)" srcset="/project-team-12/assets/carddesc-a1a7878d.jpg 1x, /project-team-12/assets/card@2xdesc-c87b0515.jpg 2x">
+      <source media="(min-width:768px)" srcset="
+          ./images/card@1xtab.jpg 1x,
+          ./images/card@2xtab.jpg 2x
+        ">
+      <source media="(max-width:767px)" srcset="/project-team-12/assets/card@1xmob-d9ef4916.jpg 1x, /project-team-12/assets/card@2xmob-18c430c1.jpg 2x">
+      <img class="image-fav" src="../images/card@1xmob.jpg" alt="Favorite food" loading="lazy">
+    </picture>
   </div>
-        <div class="block-fav">
-  <svg class="head-icon" width="90" height="80">
-    <use href="../images/svg/favicon.svg#icon-elements"></use>
-</svg>
-  <p class="message">It appears that you haven't added any recipes to your favorites
-    yet. To
-    get
-    started,
-    you can add recipes that you like
-    to your favorites for easier access in the future.</p>
-   
 </div>
+        </section>
+
         <section>
-            <div class="container">
-
-
-            </div>
+            <ul class="categories-fav"></ul>
+            <div class="recipes-fav"></div>
         </section>
     </main>
-    
 
-    <!-- <script type="module" src="/main.js"></script> -->
+
+    
 </body>
+
 </html>
