@@ -82,25 +82,43 @@
     color: rgba(255, 255, 255, 0.5);
   }
 
-  .select-ing:hover,
-  .seleact-area:hover,
-  .select-time:hover,
-  .select-ing:focus,
-  .seleact-area:focus,
-  .select-time:focus,
   .search-input:focus,
-  .search-input:focus {
+  .search-input:hover,
+  .select-ing:focus,
+  .select-ing:hover,
+  .select-time:focus,
+  .select-time:hover,
+  .seleact-area:focus,
+  .seleact-area:hover {
     color: var(--white-text-color);
-    border-color: var(--white-text-color);
   }
 
-  /* select,
-  option,
-  option:checked,
-  option:hover {
+  .search-input:focus-within::placeholder {
+    color: #161616;
+  }
+
+  .select-time::-webkit-scrollbar,
+  .seleact-area::-webkit-scrollbar,
+  .select-ing::-webkit-scrollbar {
+    width: 6px;
     background-color: var(--main-title-text-color);
-    color: var(--white-text-color);
-  } */
+  }
+
+  .select-time::-webkit-scrollbar-thumb,
+  .seleact-area::-webkit-scrollbar-thumb,
+  .select-ing::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+  }
+
+  .select-time::-webkit-scrollbar-track,
+  .seleact-area::-webkit-scrollbar-track,
+  .select-ing::-webkit-scrollbar-track {
+    background-color: #161616;
+  }
+  .option-style {
+    background-color: #161616;
+  }
 
   .icon-search {
     stroke: var(--white-text-color);
@@ -134,5 +152,11 @@
 
   .current {
     color: #9bb537;
+  }
+  .js-page,
+  .js-three-dots {
+    background-color: transparent;
+    color: var(--white-text-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 }

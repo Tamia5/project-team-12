@@ -128,3 +128,6 @@ function resetRecipes(evt) {
     startRecipe()
 }   
 
+elements.searchForm.selectArea.classList.add('option-style');
+elements.searchForm.selectIngredients.classList.add('option-style');
+elements.searchForm.selectTime.classList.add('option-style');
