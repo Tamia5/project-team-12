@@ -18,3 +18,14 @@
   background-color: #9bb537;
   color: black;
 }
+
+.js-first-page,
+.js-previous-page{
+  background-color: black;
+    color: rgba(248, 248, 248, 0.5);
+}
+.js-next-page,
+.js-last-page {
+background-color: #9bb537;
+color: black;
+}
