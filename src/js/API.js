@@ -49,7 +49,6 @@ export { fetchIngredients };
 
 
 // Hero Swiper  
-// API.js
 function fetchMasterClass() {
   return fetch(`https://tasty-treats-backend.p.goit.global/api/events`)
     .then(resp => {
