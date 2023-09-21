@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,27 +11,29 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500&family=Inter:wght@400;500;600&family=Poppins:wght@600&display=swap"
         rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css" />
     <link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/styles.css" />
 </head>
+
 <body>
     <load src="partials/header.html" />
-  
+
     <main>
-        <load src="partials/fav-hero.html" />
-        <load src="partials/fav-head.html" />
+        <section class="fav-hero">
+            <load src="partials/fav-hero.html" />
+        </section>
+
         <section>
-            <div class="container">
-
-
-            </div>
+            <ul class="categories-fav"></ul>
+            <div class="recipes-fav"></div>
         </section>
     </main>
-    
 
-    <!-- <script type="module" src="/main.js"></script> -->
+
+    <script type="module" src="/js/favotire-main.js"></script>
 </body>
+
 </html>
