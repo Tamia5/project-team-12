@@ -35,14 +35,16 @@ export function markUp(arr) {
 import sprite from '/icons.svg'
 
 function createMarkup(arr) {
-    return arr.map(({ description, preview, rating, tags, title, }) =>
+    return arr.map(({ description, preview, rating, tags, title, _id }) =>
         `<li class="categories-list">
+        <button class="add-favorites-btn">
+  <svg class="svg-heart" name="svgHurt" value="${_id}" id="check" >
+    <use href="${sprite}#icon-heart" value="${_id}"></use>
+  </svg></button>
     <a href=" " class="categories-link">
         <img src="${preview}" alt="${tags}" class="categories-image">
-        <div class="image-filter"></div>
-        <svg class="categories-svg">
-            <use href="${sprite}#icon-heart"></use>
-        </svg>
+        <div class="image-filter">
+        </div>
         <div class="categories-text">
     <h3 class="title-text">${title}</h3>
     <p class="subtitle-text">${description}</p>
@@ -54,7 +56,6 @@ function createMarkup(arr) {
             </svg>
              <button class="categories-btn">See recipe</button>
         </div>
-       
     </a>
 </li>`).join('')
 

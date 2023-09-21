@@ -311,7 +311,8 @@ select {
     rgba(5, 5, 5, 0) 108.72%
   );
 }
-.categories-svg {
+
+.add-favorites-btn {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -319,6 +320,21 @@ select {
   width: 22px;
   height: 22px;
   cursor: pointer;
+  border: 0 transparent;
+  padding: 0;
+  background-color: transparent;
+  z-index: 12;
+}
+.svg-heart {
+  fill: none;
+  pointer-events: visibleStroke;
+}
+.active-svg {
+  fill: rgba(248, 248, 248, 1);
+}
+.svg-heart {
+  width: 22px;
+  height: 22px;
 }
 .categories-text {
   position: absolute;

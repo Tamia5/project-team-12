@@ -95,6 +95,17 @@ async function getCategoriesFromAPI() {
 
 export { getCategoriesFromAPI };
   
+function fetchRecipes(id) {
+  return fetch(
+    `https://tasty-treats-backend.p.goit.global/api/recipes/${id}`
+  ).then(resp => {
+    if (!resp.ok) {
+      console.log(`Err ingredients`);
+    }
+    return resp.json();
+  });
+}
+export { fetchRecipes };
 
 
 

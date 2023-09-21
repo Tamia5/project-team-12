@@ -102,3 +102,9 @@
     min-width: 235px;
   }
 }
+
+/* FAVORITES */
+.categories-fav {
+  display: flex;
+  overflow-y: scroll;
+}

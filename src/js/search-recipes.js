@@ -1,6 +1,6 @@
 import { createMarkup, createArea, createIng } from "./render"
 import { fetchAreas, fetchIngredients, fetchRecipe } from "./API"
-import lodash from 'lodash'
+import lodash, { remove } from 'lodash'
 const dobounce = lodash.debounce
 const elements = {
     container: document.querySelector(`.categories-container`),
@@ -30,6 +30,7 @@ elements.searchForm.addEventListener(`change`, changeRecipe);
 elements.searchBtn.addEventListener(`click`, resetRecipes);
 elements.categoriesList.addEventListener("click", selectName);
 elements.allCategoriesButton.addEventListener(`click`, resetCategories)
+elements.container.addEventListener(`click`, selectAddFavorites)
 window.addEventListener('resize', dobounce(checkMediaQuery, 300));
 
 
@@ -39,6 +40,7 @@ let category = ``;
 let time = ``;
 let area = ``;
 let ingredient = ``;
+let fovariteAdd = ``;
 
 checkMediaQuery()
 function checkMediaQuery() {
@@ -76,7 +78,8 @@ function resetCategories(evt) {
 function startRecipe(evt) {
 fetchRecipe(limit, page, category, time, area, ingredient)
     .then(data => { 
-    elements.container.innerHTML = createMarkup(data.results)
+        elements.container.innerHTML = createMarkup(data.results)
+        fovariteAdd = document.querySelectorAll(`.add-favorites-btn`)
     })
     .catch(err => console.log(`err`))
 }
@@ -88,13 +91,14 @@ function trimSearch(evt) {
 }
 
 function changeRecipe(evt) {
+    // evt.preventDefault();
     time = elements.searchForm.selectTime.value
     area = elements.searchForm.selectArea.value;
     ingredient = elements.searchForm.selectIngredients.value;
  fetchRecipe(limit, page, category, time, area, ingredient)
      .then(data => { 
-             elements.container.innerHTML = createMarkup(data.results)
-         
+         elements.container.innerHTML = createMarkup(data.results)
+         fovariteAdd = document.querySelectorAll(`.categories-svg`)
         
          
     })
@@ -113,4 +117,46 @@ function resetRecipes(evt) {
     ingredient = ``;
     startRecipe()
 }   
+
+
+                                        // Favorites Add\\
+
+let parseFavotites = []
+parseLocal()
+function parseLocal() {
+    
+    const savedFavorites = localStorage.getItem(`favorites`);
+    parseFavotites = JSON.parse(savedFavorites)
+}
+function selectAddFavorites(evt) {
+    console.log(elements.container)
+    evt.preventDefault();
+    if (parseFavotites === null) {
+        parseFavotites = [""]
+            if (evt.target.nodeName === "UL") {
+            return
+        } else if (evt.target.nodeName === "svg"){
+            evt.target.classList.add('active-svg')
+                parseFavotites.push(evt.target.attributes.value.textContent)
+                localStorage.setItem(`favorites`, JSON.stringify(parseFavotites))
+
+        }
+    } else {
+        if (evt.target.nodeName === "UL") {
+        return
+            } else if (evt.target.nodeName === "svg"){
+                        if (parseFavotites.includes(evt.target.attributes.value.textContent)) {
+                        const index = parseFavotites.indexOf(evt.target.attributes.value.textContent)
+                        parseFavotites.splice(`${index}`, 1)
+                        evt.target.classList.remove('active-svg')
+                        localStorage.setItem(`favorites`, JSON.stringify(parseFavotites))
+                            } else {
+                                evt.target.classList.add('active-svg')
+                                parseFavotites.push(evt.target.attributes.value.textContent)
+                                    localStorage.setItem(`favorites`, JSON.stringify(parseFavotites))
+    }
+    }
+    }
+    
+}
 
