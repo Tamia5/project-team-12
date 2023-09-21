@@ -4,6 +4,7 @@ import {updatePagination} from "./pagination-container"
 import lodash from 'lodash'
 const dobounce = lodash.debounce
 
+// добавила глобальні переменні для погінаціі
 let currentPage = 1;
 let totalPages = 40;
 
@@ -80,14 +81,18 @@ function resetCategories(evt) {
 
 function startRecipe(evt) {
 fetchRecipe(limit, page, category, time, area, ingredient)
-    .then(data => { 
-        totalPages = data.totalPages;
-        currentPage = data.page;
-        elements.container.innerHTML = createMarkup(data.results)
-        updatePagination()
+    .then(data => {
+      // присвоїла данні для погінаціі
+      totalPages = data.totalPages;
+      currentPage = data.page;
+      elements.container.innerHTML = createMarkup(data.results);
+      // визов функціі для пагінаціі
+      updatePagination();
     })
     .catch(err => console.log(`err`))
 }
+
+// єкспртнула в фаіл agination
 export { startRecipe };
 
 function trimSearch(evt) {
