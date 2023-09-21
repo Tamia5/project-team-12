@@ -10,6 +10,7 @@
 @import url('./modal-resipe.css');
 @import url('./dark-theme.css');
 @import url('./fav-hero.css');
+@import url('fav-head.css');
 :root {
   --main-background-color: #f8f8f8;
 
