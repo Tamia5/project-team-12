@@ -26,16 +26,13 @@
     // bodyScrollLock.enableBodyScroll(document.body);
   });
 })();
-// // Current page
-// const currentPage = window.location.pathname;
-// const navLinks = document.querySelectorAll('.nav-link');
+// Current page
+const navLinks = document.querySelectorAll('.nav-link');
+const currentLink = window.location.pathname;
 
-// navLinks.forEach(function(link) {
-//   link.classList.remove('current');
-// });
-
-// if (currentPage === "/index.html") {
-//   document.querySelector('.nav-link-home').classList.add('current');
-// } else if (currentPage === "/favorite.html") {
-//   document.querySelector('.nav-link-fav').classList.add('current');
-// }
+for (const link of navLinks) {
+    if (link.href.includes(currentLink)) {
+        link.classList.add("current");
+        break;
+    }
+}

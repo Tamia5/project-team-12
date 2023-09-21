@@ -28,9 +28,9 @@
   color: #9bb537;
 }
 
-/* .current {
+.nav-link.current {
   color: #9bb537;
-} */
+}
 
 .desk-h {
   font-weight: 500;

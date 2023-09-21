@@ -1,3 +1,7 @@
+import { startRecipe } from "./search-recipes"
+
+let currentPage = 1;
+let totalPages = 40;
 
 const paginationContainer = document.querySelector('.js-pagination');
 
@@ -26,14 +30,14 @@ function updatePagination() {
     }
   }
   if (currentPage <= totalPages - 3) {
-    paginationContainer.innerHTML += `<p class="js-three-dots">...</button>`;
+    paginationContainer.innerHTML += `<button class="js-three-dots">...</button>`;
   }
   if (currentPage < totalPages) {
     paginationContainer.innerHTML += `<button class="js-next-page">></button>`;
     paginationContainer.innerHTML += `<button class="js-last-page">>></button>`;
   }
 }
-
+export {updatePagination};
 paginationContainer.addEventListener('click', event => {
   const target = event.target;
 
@@ -48,6 +52,6 @@ paginationContainer.addEventListener('click', event => {
   } else if (target.classList.contains('js-page')) {
     currentPage = parseInt(target.getAttribute('data-page'));
   }
-    fetchMovies(currentPage);
+   startRecipe(currentPage);
   
 });
