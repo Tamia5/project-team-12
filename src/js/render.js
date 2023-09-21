@@ -94,7 +94,7 @@ function renderModalRecipe(recipeItem) {
     const youtubeId = youtube.replace('https://www.youtube.com/watch?v=', '');
     videoHTML = `
       <div class="modal-recipe-video">
-        <iframe width="295" height="295" src="https://www.youtube.com/embed/${youtubeId}" frameborder="0" allowfullscreen></iframe>
+        <iframe class="modal-recipe-iframe" width="295" height="295" src="https://www.youtube.com/embed/${youtubeId}" frameborder="0" allowfullscreen></iframe>
       </div>
     `;
   }
