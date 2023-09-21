@@ -1,3 +1,7 @@
+import { startRecipe } from "./search-recipes"
+
+let currentPage = 1;
+let totalPages = 40;
 
 const paginationContainer = document.querySelector('.js-pagination');
 
@@ -33,7 +37,7 @@ function updatePagination() {
     paginationContainer.innerHTML += `<button class="js-last-page">>></button>`;
   }
 }
-
+export {updatePagination};
 paginationContainer.addEventListener('click', event => {
   const target = event.target;
 
@@ -48,6 +52,6 @@ paginationContainer.addEventListener('click', event => {
   } else if (target.classList.contains('js-page')) {
     currentPage = parseInt(target.getAttribute('data-page'));
   }
-    fetchMovies(currentPage);
+   startRecipe(currentPage);
   
 });
