@@ -79,20 +79,23 @@ function resetCategories(evt) {
     changeRecipe()
 }
 
-function startRecipe(evt) {
-fetchRecipe(limit, page, category, time, area, ingredient)
+function startRecipe(page = 1) {
+
+  fetchRecipe(limit, page, category, time, area, ingredient)
     .then(data => {
       // присвоїла данні для погінаціі
-      totalPages = data.totalPages;
+      totalPages = data.results.totalPages;
       currentPage = data.page;
+        
       elements.container.innerHTML = createMarkup(data.results);
       // визов функціі для пагінаціі
       updatePagination();
     })
-    .catch(err => console.log(`err`))
+    .catch(err => console.log(`err`));
 }
 
-// єкспртнула в фаіл agination
+
+// єкспртнула в фаіл pagination
 export { startRecipe };
 
 function trimSearch(evt) {
@@ -106,14 +109,14 @@ function changeRecipe(evt) {
     area = elements.searchForm.selectArea.value;
     ingredient = elements.searchForm.selectIngredients.value;
  fetchRecipe(limit, page, category, time, area, ingredient)
-     .then(data => { 
-             elements.container.innerHTML = createMarkup(data.results)
-         
-        
-         
-    })
+     .then(data => {
+       elements.container.innerHTML = createMarkup(data.results);
+    
+     })
     .catch(err => console.log(`err`))
 }
+
+
 function resetRecipes(evt) {
     evt.preventDefault();
     elements.searchForm.search.value = ``;
@@ -125,6 +128,6 @@ function resetRecipes(evt) {
     time = ``;
     area = ``;
     ingredient = ``;
-    startRecipe()
+    
 }   
 

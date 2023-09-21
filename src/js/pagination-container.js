@@ -52,6 +52,17 @@ paginationContainer.addEventListener('click', event => {
   } else if (target.classList.contains('js-page')) {
     currentPage = parseInt(target.getAttribute('data-page'));
   }
+ 
    startRecipe(currentPage);
   
 });
+ 
+
+
+
+
+
+
+
+
+
