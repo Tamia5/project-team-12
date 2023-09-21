@@ -30,7 +30,7 @@ function updatePagination() {
     }
   }
   if (currentPage <= totalPages - 3) {
-    paginationContainer.innerHTML += `<p class="js-three-dots">...</button>`;
+    paginationContainer.innerHTML += `<button class="js-three-dots">...</button>`;
   }
   if (currentPage < totalPages) {
     paginationContainer.innerHTML += `<button class="js-next-page">></button>`;
