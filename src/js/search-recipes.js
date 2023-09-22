@@ -1,15 +1,9 @@
 import { createMarkup, createArea, createIng } from "./render"
 import { fetchAreas, fetchIngredients, fetchRecipe } from "./API"
-
 import lodash, { remove } from 'lodash'
-
 import {updatePagination} from "./pagination-container"
-
+export {changeRecipe}
 const dobounce = lodash.debounce
-
-// добавила глобальні переменні для погінаціі
-let currentPage = 1;
-let totalPages = 40;
 
 const elements = {
     container: document.querySelector(`.categories-container`),
@@ -50,6 +44,7 @@ let time = ``;
 let area = ``;
 let ingredient = ``;
 let fovariteAdd = ``;
+let totalPages = ``;
 
 checkMediaQuery()
 function checkMediaQuery() {
@@ -89,23 +84,13 @@ fetchRecipe(limit, page, category, time, area, ingredient)
     .then(data => { 
         elements.container.innerHTML = createMarkup(data.results);
         fovariteAdd = document.querySelectorAll(`.add-favorites-btn`);
-    return data;
+        totalPages = data.totalPages;
+        page = data.page
+        updatePagination()
+
 })
-
-    .then(data => {
-      // присвоїла данні для погінаціі
-      totalPages = data.totalPages;
-      currentPage = data.page;
-      elements.container.innerHTML = createMarkup(data.results);
-      // визов функціі для пагінаціі
-      updatePagination();
-
-    })
-    .catch(err => console.log(`err`))
 }
 
-// єкспртнула в фаіл agination
-export { startRecipe };
 
 function trimSearch(evt) {
     evt.preventDefault();
@@ -113,7 +98,7 @@ function trimSearch(evt) {
     changeRecipe()
 }
 
-function changeRecipe(evt) {
+function changeRecipe(page) {
     // evt.preventDefault();
     time = elements.searchForm.selectTime.value
     area = elements.searchForm.selectArea.value;
@@ -123,8 +108,9 @@ function changeRecipe(evt) {
          elements.container.innerHTML = createMarkup(data.results)
          fovariteAdd = document.querySelectorAll(`.categories-svg`)
         
-         
-    })
+         updatePagination()
+     })
+     
     .catch(err => console.log(`err`))
 }
 function resetRecipes(evt) {
