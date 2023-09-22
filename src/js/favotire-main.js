@@ -19,7 +19,6 @@ checkLocalStorage()
 
 function checkLocalStorage() {
     if (changeCategory) {
-        console.log(changeCategory)
         if (changeCategory.length > 0) {
             elements.sectionCentered.classList.remove(`centered`)
             elements.hiddenHero.classList.remove(`hidden`)
