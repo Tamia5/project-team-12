@@ -1,6 +1,7 @@
 import _, { deburr } from "lodash";
 import { fetchId } from "./API"
 import sprite from '/icons.svg'
+
 const elements = {
     categories: document.querySelector(`.fav-categories`),
     main: document.querySelector(`.recipes-fav`),
@@ -18,7 +19,6 @@ checkLocalStorage()
 
 function checkLocalStorage() {
     if (changeCategory) {
-        console.log(changeCategory)
         if (changeCategory.length > 0) {
             elements.sectionCentered.classList.remove(`centered`)
             elements.hiddenHero.classList.remove(`hidden`)
@@ -51,18 +51,18 @@ function startRecipe(evt) {
   </svg></button>
     <a href=" " class="categories-link">
         <img src="${preview}" alt="${tags}" class="categories-image">
-        <div class="image-filter">
+        <div class="image-filter-fav">
         </div>
-        <div class="categories-text">
-    <h3 class="title-text">${title}</h3>
-    <p class="subtitle-text">${description}</p>
+        <div class="categories-text-fav">
+    <h3 class="title-text-fav">${title}</h3>
+    <p class="subtitle-text-fav">${description}</p>
         </div>
         <div class="categories-rating">
             <span class="number-rating">${rating}</span>
             <svg class="svg-rating" >
                 <use href='${sprite}#rating'></use>
             </svg>
-             <button class="categories-btn">See recipe</button>
+             <button class="categories-btn-fav">See recipe</button>
         </div>
     </a>
 </li>`)
