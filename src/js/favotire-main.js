@@ -1,23 +1,43 @@
-import _, { deburr } from "lodash";
+import _, { debounce, deburr } from "lodash";
 import { fetchId } from "./API"
 import sprite from '/icons.svg'
+import { openModal } from "./modal-recipe";
 
 const elements = {
     categories: document.querySelector(`.fav-categories`),
     main: document.querySelector(`.recipes-fav`),
     hiddenHead: document.querySelector(`.block-fav`),
     hiddenHero: document.querySelector(`.section-fav-hero`),
-    sectionCentered: document.querySelector(`.centered`)
+    sectionCentered: document.querySelector(`.fav-hero`)
 }
 
 elements.main.addEventListener(`click`, deleteAddFavorites)
+window.addEventListener('resize', debounce(checkMediaQuery, 300));
+
 let limit = 6;
 let page = 1;
 let changeCategory = JSON.parse(localStorage.getItem(`favorites`));
 let id = ``
-checkLocalStorage()
 
-function checkLocalStorage() {
+checkMediaQuery()
+function checkMediaQuery() {
+ if (window.innerWidth >= 768) {
+     limit = 8;
+     elements.sectionCentered.classList.remove(`centered`)
+     elements.categories.classList.add(`hidden`)
+     elements.hiddenHero.classList.remove(`hidden`)
+      checkLocalStorage()
+  } else {
+     limit = 6;
+     elements.sectionCentered.classList.add(`centered`)
+            elements.hiddenHero.classList.add(`hidden`)
+            elements.categories.classList.add(`hidden`)
+     checkLocalStorageMobile()
+     
+  }
+}
+
+function checkLocalStorageMobile() {
     if (changeCategory) {
         if (changeCategory.length > 0) {
             elements.sectionCentered.classList.remove(`centered`)
@@ -29,6 +49,23 @@ function checkLocalStorage() {
             elements.sectionCentered.classList.add(`centered`)
             elements.hiddenHero.classList.add(`hidden`)
             elements.categories.classList.add(`hidden`)
+            elements.hiddenHead.classList.remove(`hidden`)
+        }
+    } else return
+}
+
+function checkLocalStorage() {
+    if (changeCategory) {
+        if (changeCategory.length > 0) {
+             elements.sectionCentered.classList.remove(`centered`)
+            elements.hiddenHero.classList.remove(`hidden`)
+            elements.categories.classList.remove(`hidden`)
+            elements.hiddenHead.classList.add(`hidden`)
+            selectId()
+        } else {
+             elements.sectionCentered.classList.remove(`centered`)
+            elements.hiddenHero.classList.remove(`hidden`)
+            elements.categories.classList.add(`hidden`)  
             elements.hiddenHead.classList.remove(`hidden`)
         }
     } else return
@@ -49,11 +86,11 @@ function startRecipe(evt) {
   <svg class="fav-svg-heart active-svg" name="svgHurt" value="${id}" id="check" >
     <use href="${sprite}#icon-heart" value="${_id}"></use>
   </svg></button>
-    <a href=" " class="categories-link">
+   
         <img src="${preview}" alt="${tags}" class="categories-image">
-        <div class="image-filter-fav">
+        <div class="image-filter-fav" data-id="${_id}">
         </div>
-        <div class="categories-text-fav">
+        <div class="categories-text-fav" ">
     <h3 class="title-text-fav">${title}</h3>
     <p class="subtitle-text-fav">${description}</p>
         </div>
@@ -62,9 +99,9 @@ function startRecipe(evt) {
             <svg class="svg-rating" >
                 <use href='${sprite}#rating'></use>
             </svg>
-             <button class="categories-btn-fav">See recipe</button>
+             <button class="categories-btn-fav" data-id="${_id}">See recipe</button>
         </div>
-    </a>
+
 </li>`)
             elements.categories.insertAdjacentHTML('beforeend', `<button class="fav-categories-btn" type="button">${category}</button>`)
             const catBtn = document.querySelectorAll(`.fav-categories-btn`)
@@ -74,6 +111,12 @@ function startRecipe(evt) {
 
 function deleteAddFavorites(evt) {
     evt.preventDefault()
+    if (evt.target.classList.value === `image-filter-fav`) {
+    openModal(evt.target.dataset.id)
+  }
+  if (evt.target.classList.value === `categories-btn-fav`) {
+    openModal(evt.target.dataset.id)
+  }
     if (evt.target.nodeName === "UL") {
         return
     } else if (evt.target.nodeName === "svg") {

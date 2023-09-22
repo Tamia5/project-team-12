@@ -64,6 +64,7 @@
 .fav-categories::-webkit-scrollbar {
   width: 8px;
 }
+
 .hidden {
   display: none;
 }
