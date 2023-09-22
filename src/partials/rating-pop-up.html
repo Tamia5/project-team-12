@@ -1,56 +1,93 @@
-<button type="button" class="rating-open-btn btnOrderNow">
-    Give a rating
-</button>
+<button type="button" class="rating-open-btn btnOrderNow">Give a rating</button>
 <div class="rating-backdrop backdrop is-hidden">
-    <div class="rating-modal modal is-hidden" data-rating-modal>
-        <button class="rating-close-btn" type="button">
-            <svg class="rating-close-icon" width="24" height="24" data-rating-close>
-                <use href="./icons.svg#icon-x"></use>
-            </svg>
-        </button>
-        <div class="rating-wrapper wrapper">
-            <div class="rating-top-wrapper">
-            <h2 class="rating-title">Rating</h2>
-            <div class="rating-body-wrapper">
-                <p class="rating-value">0.0</p>
+  <div class="rating-modal modal is-hidden" data-rating-modal>
+    <button class="rating-close-btn" type="button">
+      <svg class="rating-close-icon" width="24" height="24" data-rating-close>
+        <use href="./icons.svg#icon-x"></use>
+      </svg>
+    </button>
+    <div class="rating-wrapper wrapper">
+      <div class="rating-top-wrapper">
+        <h2 class="rating-title">Rating</h2>
+        <div class="rating-body-wrapper">
+          <p class="rating-value">0.0</p>
+          <div class="rating">
+            <div class="rating-body rating-set">
+              <div class="rating-active">
                 <div class="rating">
-                <div class="rating-body rating-set">
-                    <div class="rating-active">
-<div class="rating">
-    <input type="checkbox" id="star1" name="rating" value="1" />
-    <label for="star1">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <use class="rating-icon-use" href="./icons.svg#icon-star"></use>
-        </svg>
-    </label>
-    <input type="checkbox" id="star2" name="rating" value="2" />
-    <label for="star2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <use class="rating-icon-use" href="./icons.svg#icon-star"></use>
-        </svg>
-    </label>
-    <input type="checkbox" id="star3" name="rating" value="3" />
-    <label for="star3">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <use class="rating-icon-use" href="./icons.svg#icon-star"></use>
-        </svg>
-    </label>
-    <input type="checkbox" id="star4" name="rating" value="4" />
-    <label for="star4">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <use class="rating-icon-use" href="./icons.svg#icon-star"></use>
-        </svg>
-    </label>
-    <input type="checkbox" id="star5" name="rating" value="5" />
-    <label for="star5">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <use class="rating-icon-use" href="./icons.svg#icon-star"></use>
-        </svg>
-    </label>
-</div>
+                  <input type="checkbox" id="star1" name="rating" value="1" />
+                  <label for="star1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <use
+                        class="rating-icon-use"
+                        href="./icons.svg#icon-star"
+                      ></use>
+                    </svg>
+                  </label>
+                  <input type="checkbox" id="star2" name="rating" value="2" />
+                  <label for="star2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <use
+                        class="rating-icon-use"
+                        href="./icons.svg#icon-star"
+                      ></use>
+                    </svg>
+                  </label>
+                  <input type="checkbox" id="star3" name="rating" value="3" />
+                  <label for="star3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <use
+                        class="rating-icon-use"
+                        href="./icons.svg#icon-star"
+                      ></use>
+                    </svg>
+                  </label>
+                  <input type="checkbox" id="star4" name="rating" value="4" />
+                  <label for="star4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <use
+                        class="rating-icon-use"
+                        href="./icons.svg#icon-star"
+                      ></use>
+                    </svg>
+                  </label>
+                  <input type="checkbox" id="star5" name="rating" value="5" />
+                  <label for="star5">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                    >
+                      <use
+                        class="rating-icon-use"
+                        href="./icons.svg#icon-star"
+                      ></use>
+                    </svg>
+                  </label>
+                </div>
 
-
-                        <!-- <div class="rating-items">
+                <!-- <div class="rating-items">
                             <label for="rating-1" class="rating-item-label" name="rating" >
                                 <input type="radio" class="rating-item-input" name="rating" value="1" id="rating-1" aria-label="bad">
                                 <svg class="rating-item-icon" width="24px" height="24px">
@@ -82,20 +119,27 @@
                                 </svg>
                             </label>
                         </div> -->
-                    </div>
-                </div>
-                </div>
+              </div>
             </div>
-            </div>
-            <form action="/submit-form" class="rating-form">
-                <label class="rating-form-label" for="email">Email</label>
-                <div class="rating-form-element">
-                    <input class="rating-form-input" type="email" name="email" id="email" required autocomplete="on"
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter email" />
-                </div>
-                <button class="rating-form-btn send-btn" type="submit">Send</button>
-            </form>
+          </div>
         </div>
-
+      </div>
+      <form action="/submit-form" class="rating-form">
+        <label class="rating-form-label" for="email2">Email</label>
+        <div class="rating-form-element">
+          <input
+            class="rating-form-input"
+            type="email"
+            name="email"
+            id="email2"
+            required
+            autocomplete="on"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            placeholder="Enter email"
+          />
+        </div>
+        <button class="rating-form-btn send-btn" type="submit">Send</button>
+      </form>
     </div>
+  </div>
 </div>
