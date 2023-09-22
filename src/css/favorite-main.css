@@ -3,6 +3,7 @@
 }
 .recipes-fav {
   margin-top: 16px;
+  margin-bottom: 40px;
 }
 @media only screen and (min-width: 768px) {
   .sectirion-resp {
@@ -75,6 +76,7 @@
   }
   .recipes-fav {
     gap: 16px;
+    margin-bottom: 64px;
   }
 }
 @media only screen and (min-width: 1200px) {
