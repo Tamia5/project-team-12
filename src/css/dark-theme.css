@@ -8,7 +8,8 @@
   .title,
   .hero-text,
   .popular-recipes-title,
-  .order-form-title {
+  .order-form-title,
+  .message {
     color: var(--white-text-color);
   }
 
@@ -21,7 +22,9 @@
     stroke: var(--white-text-color);
   }
   .svg-shopping-cart:hover,
-  .svg-shopping-cart:focus {
+  .svg-shopping-cart:focus,
+  .header-btn-close-svg:hover,
+  .header-btn-close-svg:focus {
     stroke: var(--accent-text-color);
   }
   .btnOrderNow {
@@ -136,7 +139,8 @@
     stroke: var(--accent-text-color);
   }
 
-  .modal {
+  .modal,
+  .header-mobile-menu {
     background-color: var(--main-title-text-color);
   }
 
