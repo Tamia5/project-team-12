@@ -140,11 +140,12 @@ let parseFavotites = JSON.parse(localStorage.getItem(`favorites`));
 
 function selectAddFavorites(evt) {
   evt.preventDefault();
-  
   if (evt.target.classList.value === `image-filter`) {
     openModal(evt.target.dataset.id)
   }
-
+  if (evt.target.classList.value === `categories-btn`) {
+    openModal(evt.target.dataset.id)
+  }
     if (parseFavotites === null) {
         parseFavotites = [""]
         parseFavotites.splice(`0`,1)

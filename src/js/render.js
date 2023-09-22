@@ -54,7 +54,7 @@ function createMarkup(arr) {
             <svg class="svg-rating" >
                 <use href='${sprite}#rating'></use>
             </svg>
-             <button class="categories-btn">See recipe</button>
+             <button class="categories-btn" data-id="${_id}">See recipe</button>
         </div>
 
 </li>`).join('')

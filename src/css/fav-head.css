@@ -18,7 +18,11 @@
 .hidden {
   display: none;
 }
-
+@media only screen and (min-width: 768px) {
+  .block-fav {
+    top: 620px;
+  }
+}
 .head-icon {
   width: 68px;
   margin-bottom: 24px;

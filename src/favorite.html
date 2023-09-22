@@ -1,44 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tasty Treats</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css"/>
-    <link
-      rel="stylesheet"
-      href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css"/>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
 
-  <body>
-    <load src="partials/header.html" />
-    
-    <main>
-        <section class="fav-hero centered">
-            <load src="partials/fav-hero.html" />
-            <load src="partials/fav-head.html" />
-        </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tasty Treats</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css" />
+  <link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
 
-        <section class="sectirion-resp">
-            <div class="container">
-                <div class="fav-categories hidden">
-                    <button class="fav-categories-btn" type="button">All categories</button>
-                </div>
-                <ul class="recipes-fav"></ul>
-            </div>
+<body>
+  <load src="partials/header.html" />
 
-        </section>
-    </main>
+  <main>
+    <section class="fav-hero ">
+      <load src="partials/fav-hero.html" />
+      <load src="partials/fav-head.html" />
+    </section>
 
-    <script type="module" src="/js/favotire-main.js"></script>
-    <script type="module" src="/js/header-btn-menu.js"></script>
-    <script type="module" src="/js/dark-theme.js"></script>
-  </body>
+    <section class="sectirion-resp">
+      <div class="container">
+        <div class="fav-categories ">
+          <button class="fav-categories-btn" type="button">All categories</button>
+        </div>
+        <ul class="recipes-fav"></ul>
+      </div>
+
+    </section>
+  </main>
+  <div class="backdrop-recipe is-hidden" data-modal-recipe></div>
+  <script type="module" src="/js/favotire-main.js"></script>
+  <script type="module" src="/js/header-btn-menu.js"></script>
+  <script type="module" src="/js/dark-theme.js"></script>
+</body>
+
 </html>
