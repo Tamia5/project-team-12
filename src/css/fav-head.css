@@ -1,3 +1,8 @@
+.is-hidden {
+  float: right;
+  display: none;
+}
+
 .block-fav {
   display: flex;
   flex-direction: column;
@@ -16,7 +21,6 @@
   line-height: 1.29;
 }
 
-
 @media screen and (min-width: 768px) {
   .head-icon {
     margin-bottom: 32px;
@@ -29,7 +33,6 @@
     padding-bottom: 319px;
   }
 }
-
 
 @media screen and (min-width: 1280px) {
   .message {
