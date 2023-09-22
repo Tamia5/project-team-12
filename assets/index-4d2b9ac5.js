@@ -1,4 +1,4 @@
-import{a as Ls,g as As,l as Os,b as Is,c as zs,d as Kt,e as $s}from"./dark-theme-93f883ca.js";const kt="/project-team-12/assets/icons-75c78b7c.svg";function Ds(t){return t.map(({cook:e,topic:s})=>`
+import{a as Ls,g as As,l as Os,b as Is,c as zs,d as Kt,e as $s}from"./dark-theme-6946a6fe.js";const kt="/project-team-12/assets/icons-75c78b7c.svg";function Ds(t){return t.map(({cook:e,topic:s})=>`
                 <div class=" hero-event swiper-slide">
                         <div class="hero-block-chief">
                             <picture>
