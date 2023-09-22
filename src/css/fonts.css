@@ -1,0 +1,26 @@
+/* Для стилю шрифту "normal" з вагою "400" */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./fonts/Inter-400.woff2) format('woff2');
+}
+
+/* Для стилю шрифту "normal" з вагою "500" */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(./fonts/Inter-500.woff2) format('woff2');
+}
+
+/* Для стилю шрифту "normal" з вагою "600" */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(./fonts/Inter-600.woff2) format('woff2');
+}
