@@ -143,7 +143,6 @@ function resetRecipes(evt) {
 
 
                                         // Favorites Add\\
-
 let parseFavotites = []
 parseLocal()
 function parseLocal() {

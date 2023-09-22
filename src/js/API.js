@@ -95,7 +95,7 @@ async function getCategoriesFromAPI() {
 export { getCategoriesFromAPI };
 
   
-function fetchRecipes(id) {
+function fetchId(id) {
   return fetch(
     `https://tasty-treats-backend.p.goit.global/api/recipes/${id}`
   ).then(resp => {
@@ -105,7 +105,7 @@ function fetchRecipes(id) {
     return resp.json();
   });
 }
-export { fetchRecipes };
+export { fetchId };
 
   
 //MODAL RECIPE DETAILS 
