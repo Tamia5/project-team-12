@@ -57,10 +57,10 @@ function startRecipe(evt) {
     <h3 class="title-text-fav">${title}</h3>
     <p class="subtitle-text-fav">${description}</p>
         </div>
-        <div class="categories-rating-fav">
-            <span class="number-rating-fav">${rating}</span>
-            <svg class="svg-rating-fav" >
-                <use href='${sprite}#svg-rating'></use>
+        <div class="categories-rating">
+            <span class="number-rating">${rating}</span>
+            <svg class="svg-rating" >
+                <use href='${sprite}#rating'></use>
             </svg>
              <button class="categories-btn-fav">See recipe</button>
         </div>
