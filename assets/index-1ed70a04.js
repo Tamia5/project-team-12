@@ -1,4 +1,4 @@
-import{s as kt,a as $s,g as zs,f as Ds,l as ks,b as Rs,c as Ns,d as Kt,e as Bs}from"./dark-theme-2dd8be4d.js";function Hs(t){return t.map(({cook:e,topic:s})=>`
+import{s as kt,a as $s,g as zs,f as Ds,l as ks,b as Rs,c as Ns,d as Kt,e as Bs}from"./dark-theme-abd40ee7.js";function Hs(t){return t.map(({cook:e,topic:s})=>`
                 <div class=" hero-event swiper-slide">
                         <div class="hero-block-chief">
                             <picture>
