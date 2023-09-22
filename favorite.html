@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tasty Treats</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css"/>
-    <link
-      rel="stylesheet"
-      href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css"/>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-    
-    <script type="module" crossorigin src="/project-team-12/assets/favorite-0d633261.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-team-12/assets/dark-theme-abd40ee7.js">
-    <link rel="stylesheet" href="/project-team-12/assets/dark-theme-2a883ea3.css">
-  </head>
 
-  <body>
-    <header class="header">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tasty Treats</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css" />
+  <link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  
+  <script type="module" crossorigin src="/project-team-12/assets/favorite-bbe371b2.js"></script>
+  <link rel="modulepreload" crossorigin href="/project-team-12/assets/dark-theme-8f3a6585.js">
+  <link rel="stylesheet" href="/project-team-12/assets/dark-theme-29604812.css">
+</head>
+
+<body>
+  <header class="header">
   <div class="header-container container">
     <nav class="header-nav">
       <ul class="nav-menu list">
@@ -85,23 +80,20 @@
   </div>
 </div>
 
-    
-    <main>
-        <section class="fav-hero centered">
-            <div class="section-fav-hero container hidden">
+
+  <main>
+    <section class="fav-hero ">
+      <div class="section-fav-hero container ">
   <div class=" hero-container">
     <picture class="favorite-image">
       <source media="(min-width:1280px)" srcset="/project-team-12/assets/carddesc-a1a7878d.jpg 1x, /project-team-12/assets/card@2xdesc-c87b0515.jpg 2x">
-      <source media="(min-width:768px)" srcset="
-          ./images/card@1xtab.jpg 1x,
-          ./images/card@2xtab.jpg 2x
-        ">
+      <source media="(min-width:768px)" srcset="/project-team-12/assets/cardtab@1-57cf42a7.png 1x, /project-team-12/assets/card@2xtab-af8bb2eb.jpg 2x">
       <source media="(max-width:767px)" srcset="/project-team-12/assets/card@1xmob-d9ef4916.jpg 1x, /project-team-12/assets/card@2xmob-18c430c1.jpg 2x">
       <img class="image-fav" src="../images/card@1xmob.jpg" alt="Favorite food" loading="lazy">
     </picture>
   </div>
 </div>
-            <div class="block-fav container">
+      <div class="block-fav container">
   <svg class="head-icon" width="90" height="80">
     <use href="/project-team-12/assets/icons-c95753b4.svg#icon-favorite"></use>
   </svg>
@@ -113,21 +105,22 @@
     to your favorites for easier access in the future.</p>
 
 </div>
-        </section>
+    </section>
 
-        <section class="sectirion-resp">
-            <div class="container">
-                <div class="fav-categories hidden">
-                    <button class="fav-categories-btn" type="button">All categories</button>
-                </div>
-                <ul class="recipes-fav"></ul>
-            </div>
+    <section class="sectirion-resp">
+      <div class="container">
+        <div class="fav-categories ">
+          <button class="fav-categories-btn" type="button">All categories</button>
+        </div>
+        <ul class="recipes-fav"></ul>
+      </div>
 
-        </section>
-    </main>
+    </section>
+  </main>
+  <div class="backdrop-recipe is-hidden" data-modal-recipe></div>
+  
+  
+  
+</body>
 
-    
-    
-    
-  </body>
 </html>
