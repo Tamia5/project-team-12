@@ -1,6 +1,7 @@
 import { createMarkup, createArea, createIng } from "./render"
 import { fetchAreas, fetchIngredients, fetchRecipe } from "./API"
-import lodash, { remove, update } from 'lodash'
+import lodash, { functionsIn, remove, update } from 'lodash'
+import { openModal } from "./modal-recipe"
 
 
 const dobounce = lodash.debounce
@@ -46,6 +47,7 @@ let ingredient = ``;
 let fovariteAdd = ``;
 let totalPages = ``;
 
+
 checkMediaQuery()
 function checkMediaQuery() {
   if (window.innerWidth >= 1200) {
@@ -84,12 +86,10 @@ function resetCategories(evt) {
 function startRecipe(evt) {
 fetchRecipe(limit, page, category, time, area, ingredient)
     .then(data => { 
-        console.log(data)
-        console.log(totalPages)
         elements.container.innerHTML = createMarkup(data.results);
-        fovariteAdd = document.querySelectorAll(`.add-favorites-btn`);
+      fovariteAdd = document.querySelectorAll(`.add-favorites-btn`);
         totalPages = data.totalPages;
-        console.log(totalPages)
+
         updatePagination()
 
 })
@@ -119,7 +119,8 @@ function changeRecipe() {
     .catch(err => console.log(`err`))
 }
 function resetRecipes(evt) {
-    evt.preventDefault();
+  evt.preventDefault();
+  resetCategories()
     elements.searchForm.search.value = ``;
     elements.searchForm.selectTime.value = ``;
     elements.searchForm.selectArea.value = ``;
@@ -138,7 +139,12 @@ localStorage.clear()
 let parseFavotites = JSON.parse(localStorage.getItem(`favorites`));
 
 function selectAddFavorites(evt) {
-    evt.preventDefault();
+  evt.preventDefault();
+  
+  if (evt.target.classList.value === `image-filter`) {
+    openModal(evt.target.dataset.id)
+  }
+
     if (parseFavotites === null) {
         parseFavotites = [""]
         parseFavotites.splice(`0`,1)
@@ -170,16 +176,12 @@ function selectAddFavorites(evt) {
 }
 
 
-elements.searchForm.selectArea.classList.add('option-style');
-elements.searchForm.selectIngredients.classList.add('option-style');
-elements.searchForm.selectTime.classList.add('option-style');
 
 // Update Pagination \\
 
 const paginationContainer = document.querySelector('.js-pagination');
 
 function updatePagination() {
-  console.log(page)
   paginationContainer.innerHTML = '';
     if (totalPages != null) {
       const pagesToShow = 3;
@@ -193,7 +195,6 @@ function updatePagination() {
   }
 
   if (page > 1) {
-    console.log(page)
     paginationContainer.innerHTML += `<button class="js-first-page"><<</button>`;
     paginationContainer.innerHTML += `<button class="js-previous-page"><</button>`;
   }
@@ -233,3 +234,8 @@ paginationContainer.addEventListener('click', event => {
     updatePagination()
   changeRecipe()
 });
+
+// Open modal \\
+function getLinkId(evt) {
+  console.log(evt.target)
+}

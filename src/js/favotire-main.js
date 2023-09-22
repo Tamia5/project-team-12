@@ -60,7 +60,7 @@ function startRecipe(evt) {
         <div class="categories-rating">
             <span class="number-rating">${rating}</span>
             <svg class="svg-rating" >
-                <use href='${sprite}#svg-rating'></use>
+                <use href='${sprite}#rating'></use>
             </svg>
              <button class="categories-btn">See recipe</button>
         </div>
