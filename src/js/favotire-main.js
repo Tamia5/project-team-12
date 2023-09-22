@@ -1,19 +1,15 @@
-import { deburr } from "lodash";
+import _, { deburr } from "lodash";
 import { fetchId } from "./API"
-import { renderCategories} from "./render"
+import sprite from '/icons.svg'
 const elements = {
-    categories: document.querySelector(`.categories-fav`),
+    categories: document.querySelector(`.fav-categories`),
     main: document.querySelector(`.recipes-fav`),
-    hiddenHead: document.querySelector(`.block-fav`)
+    hiddenHead: document.querySelector(`.block-fav`),
+    hiddenHero: document.querySelector(`.section-fav-hero`),
+    sectionCentered: document.querySelector(`.centered`)
 }
 
-        // elements.categories.innerHTML = renderCategories(data);
-        // const categoriesItem = document.querySelectorAll(`.js-categories-item`)
-        // categoriesItem.forEach(el=>{el.classList.add(`js-favotire-categories`)})
-        // categoriesItem.forEach(el=>{ el.classList.remove('js-categories-item'); });
-
-
-
+elements.main.addEventListener(`click`, deleteAddFavorites)
 let limit = 6;
 let page = 1;
 let changeCategory = JSON.parse(localStorage.getItem(`favorites`));
@@ -22,15 +18,23 @@ checkLocalStorage()
 
 function checkLocalStorage() {
     if (changeCategory) {
-        changeCategory.splice(`0`, 1)
+        console.log(changeCategory)
         if (changeCategory.length > 0) {
+            elements.sectionCentered.classList.remove(`centered`)
+            elements.hiddenHero.classList.remove(`hidden`)
+            elements.categories.classList.remove(`hidden`)
+            elements.hiddenHead.classList.add(`hidden`)
             selectId()
-        } else elements.hiddenHead.classList.remove(`is-hidden`)
-    } else elements.hiddenHead.classList.remove(`is-hidden`)
+        } else {
+            elements.sectionCentered.classList.add(`centered`)
+            elements.hiddenHero.classList.add(`hidden`)
+            elements.categories.classList.add(`hidden`)
+            elements.hiddenHead.classList.remove(`hidden`)
+        }
+    } else return
 }
 
 function selectId(evt) {
-    console.log(changeCategory)
     changeCategory.forEach(categori => {
         id = categori
         startRecipe()
@@ -39,12 +43,11 @@ function selectId(evt) {
 function startRecipe(evt) {
     fetchId(id)
         .then(data => {
-            console.log(data)
-            const { preview, tags, title, description, rating } = data
-            elements.main.insertAdjacentHTML('beforeend', `<li class="categories-list">
+            const { preview, tags, title, description, rating, category, _id } = data
+            elements.main.insertAdjacentHTML('beforeend', `<li class="fav-list" data="${_id}">
         <button class="add-favorites-btn">
-  <svg class="svg-heart" name="svgHurt" value="" id="check" >
-    <use href="" value=""></use>
+  <svg class="fav-svg-heart active-svg" name="svgHurt" value="${id}" id="check" >
+    <use href="${sprite}#icon-heart" value="${_id}"></use>
   </svg></button>
     <a href=" " class="categories-link">
         <img src="${preview}" alt="${tags}" class="categories-image">
@@ -57,11 +60,31 @@ function startRecipe(evt) {
         <div class="categories-rating">
             <span class="number-rating">${rating}</span>
             <svg class="svg-rating" >
-                <use href=''></use>
+                <use href='${sprite}#svg-rating'></use>
             </svg>
              <button class="categories-btn">See recipe</button>
         </div>
     </a>
 </li>`)
+            elements.categories.insertAdjacentHTML('beforeend', `<button class="fav-categories-btn" type="button">${category}</button>`)
+            const catBtn = document.querySelectorAll(`.fav-categories-btn`)
+            // console.log(catBtn[0].innerHTML)
         })
-    }    
+}    
+
+function deleteAddFavorites(evt) {
+    evt.preventDefault()
+    if (evt.target.nodeName === "UL") {
+        return
+    } else if (evt.target.nodeName === "svg") {
+        if (changeCategory.includes(evt.target.attributes.value.textContent)) {
+            const index = changeCategory.indexOf(evt.target.attributes.value.textContent)
+            console.log(changeCategory.indexOf(evt.target.attributes.value.textContent))
+            changeCategory.splice(`${index}`, 1)
+            localStorage.setItem(`favorites`, JSON.stringify(changeCategory))
+            changeCategory = JSON.parse(localStorage.getItem(`favorites`));
+            elements.main.innerHTML = ``
+            checkLocalStorage()
+        }
+    }   
+}

@@ -21,14 +21,19 @@
 <body>
     <load src="partials/header.html" />
     <main>
-        <section class="fav-hero">
+        <section class="fav-hero centered">
             <load src="partials/fav-hero.html" />
             <load src="partials/fav-head.html" />
         </section>
 
-        <section>
-            <ul class="categories-fav"></ul>
-            <div class="recipes-fav"></div>
+        <section class="sectirion-resp">
+            <div class="container">
+                <div class="fav-categories hidden">
+                    <button class="fav-categories-btn" type="button">All categories</button>
+                </div>
+                <ul class="recipes-fav"></ul>
+            </div>
+
         </section>
     </main>
 

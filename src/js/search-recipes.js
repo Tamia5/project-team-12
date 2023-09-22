@@ -143,18 +143,14 @@ function resetRecipes(evt) {
 
 
                                         // Favorites Add\\
-let parseFavotites = []
-parseLocal()
-function parseLocal() {
-    
-    const savedFavorites = localStorage.getItem(`favorites`);
-    parseFavotites = JSON.parse(savedFavorites)
-}
+localStorage.clear()
+let parseFavotites = JSON.parse(localStorage.getItem(`favorites`));
+
 function selectAddFavorites(evt) {
-    console.log(elements.container)
     evt.preventDefault();
     if (parseFavotites === null) {
         parseFavotites = [""]
+        parseFavotites.splice(`0`,1)
             if (evt.target.nodeName === "UL") {
             return
         } else if (evt.target.nodeName === "svg"){

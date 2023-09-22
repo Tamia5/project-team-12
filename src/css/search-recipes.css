@@ -328,13 +328,11 @@ select {
 .svg-heart {
   fill: none;
   pointer-events: visibleStroke;
+  width: 22px;
+  height: 22px;
 }
 .active-svg {
   fill: rgba(248, 248, 248, 1);
-}
-.svg-heart {
-  width: 22px;
-  height: 22px;
 }
 .categories-text {
   position: absolute;
@@ -342,6 +340,7 @@ select {
   left: 16px;
   width: 90%;
 }
+
 @media only screen and (min-width: 768px) {
   .categories-text {
     top: 140px;

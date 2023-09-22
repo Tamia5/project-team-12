@@ -1,0 +1,85 @@
+.sectirion-resp {
+  padding-top: 40px;
+}
+.recipes-fav {
+  margin-top: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .sectirion-resp {
+    padding-top: 64px;
+  }
+  .recipes-fav {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .recipes-fav {
+    margin-top: 32px;
+  }
+}
+
+.fav-svg-heart {
+  fill: rgba(248, 248, 248, 1);
+  pointer-events: visibleStroke;
+  width: 22px;
+  height: 22px;
+}
+.fav-categories-btn {
+  height: 45px;
+
+  padding: 12px 18px;
+
+  background-color: transparent;
+  color: var(--secondary-text-color);
+  border: 1px solid var(--input-color);
+  border-radius: 15px;
+
+  line-height: 0.82;
+  font-weight: 500;
+  font-size: 18px;
+  transition-property: color, background-color;
+  transition-duration: 200ms;
+  transition: all 500ms;
+}
+.fav-categories-btn:hover,
+.fav-categories-btn:focus {
+  background-color: #9bb537;
+  border: none;
+  color: #f8f8f8;
+}
+.active {
+  color: var(--accent-text-color);
+}
+
+.fav-categories {
+  gap: 12px;
+  display: flex;
+  overflow-y: scroll;
+  padding: 0px;
+}
+.fav-categories::-webkit-scrollbar {
+  width: 8px;
+}
+.hidden {
+  display: none;
+}
+.fav-list {
+  position: relative;
+}
+@media only screen and (min-width: 768px) {
+  .fav-list {
+    height: 244px;
+    width: 224px;
+  }
+  .recipes-fav {
+    gap: 16px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .recipes-fav {
+    column-gap: 16px;
+    row-gap: 32px;
+  }
+}
