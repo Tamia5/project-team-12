@@ -59,6 +59,7 @@
   display: flex;
   overflow-y: scroll;
   padding: 0px;
+  white-space: nowrap;
 }
 .fav-categories::-webkit-scrollbar {
   width: 8px;
@@ -69,86 +70,89 @@
 .fav-list {
   position: relative;
   margin-top: 24px;
-
 }
 .image-filter-fav {
-    width: 100%;
-     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(0.94deg,rgba(5, 5, 5, 0.6) 4.82%,rgba(5, 5, 5, 0) 108.72%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0.94deg,
+    rgba(5, 5, 5, 0.6) 4.82%,
+    rgba(5, 5, 5, 0) 108.72%
+  );
 }
 .categories-text-fav {
-    position: absolute;
-    top: 150px;
-    left: 16px;
-    width: 90%;
+  position: absolute;
+  top: 150px;
+  left: 16px;
+  width: 90%;
 }
 .title-text-fav {
-    color: var(--white-text-color);
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.3;
-    text-transform: uppercase;
+  color: var(--white-text-color);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.3;
+  text-transform: uppercase;
 }
 .subtitle-text-fav {
-    margin-top: 8px;
-    color: var(--white-text-color);
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.34;
-    width: 100%;
-    
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  margin-top: 8px;
+  color: var(--white-text-color);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.34;
+  width: 100%;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .categories-rating-fav {
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-    width: 90%;
-    
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  width: 90%;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 .number-rating-fav {
-    color: var(--white-text-color);
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.29;
+  color: var(--white-text-color);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
 }
 .svg-rating-fav {
-    margin-left: 4px;
-    width: 90px;
-    height: 18px;
+  margin-left: 4px;
+  width: 90px;
+  height: 18px;
 }
 .categories-btn-fav {
-    border: none;
-    border-radius: 8px;
-    
-    margin-left: auto;
-    padding: 8px 14px;
-    
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.19;
-    color: var(--white-text-color);
-    background-color: var(--button-color);
+  border: none;
+  border-radius: 8px;
+
+  margin-left: auto;
+  padding: 8px 14px;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.19;
+  color: var(--white-text-color);
+  background-color: var(--button-color);
 }
 @media screen and (min-width: 321px) {
   .categories-text-fav {
-      position: absolute;
-      top: 214px;
-      left: 16px;
-      width: 90%;
-    }
+    position: absolute;
+    top: 214px;
+    left: 16px;
+    width: 90%;
   }
+}
 
 @media only screen and (min-width: 768px) {
   .fav-list {
