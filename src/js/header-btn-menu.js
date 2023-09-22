@@ -28,9 +28,17 @@
 })();
 // Current page
 const navLinks = document.querySelectorAll('.nav-link');
+const navLinksMob = document.querySelectorAll('.nav-mobile-link');
 const currentLink = window.location.pathname;
 
 for (const link of navLinks) {
+    if (link.href.includes(currentLink)) {
+        link.classList.add("current");
+        break;
+    }
+}
+// Mobile
+for (const link of navLinksMob) {
     if (link.href.includes(currentLink)) {
         link.classList.add("current");
         break;
