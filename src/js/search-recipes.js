@@ -1,8 +1,8 @@
 import { createMarkup, createArea, createIng } from "./render"
 import { fetchAreas, fetchIngredients, fetchRecipe } from "./API"
-import lodash, { remove } from 'lodash'
-import {updatePagination} from "./pagination-container"
-export {changeRecipe}
+import lodash, { remove, update } from 'lodash'
+
+
 const dobounce = lodash.debounce
 
 const elements = {
@@ -66,6 +66,7 @@ function selectName(evt) {
         category = evt.target.outerText
         changeClass();
         evt.target.classList.add(`active`)
+        page = 1;
         changeRecipe();
   }
 }
@@ -76,16 +77,19 @@ function changeClass() {
 function resetCategories(evt) {
     category = ``;
     changeClass()
+    page = 1;
     changeRecipe()
 }
 
 function startRecipe(evt) {
 fetchRecipe(limit, page, category, time, area, ingredient)
     .then(data => { 
+        console.log(data)
+        console.log(totalPages)
         elements.container.innerHTML = createMarkup(data.results);
         fovariteAdd = document.querySelectorAll(`.add-favorites-btn`);
         totalPages = data.totalPages;
-        page = data.page
+        console.log(totalPages)
         updatePagination()
 
 })
@@ -95,20 +99,21 @@ fetchRecipe(limit, page, category, time, area, ingredient)
 function trimSearch(evt) {
     evt.preventDefault();
     category = elements.searchForm.search.value.trim();
+    page = 1;
     changeRecipe()
 }
 
-function changeRecipe(page) {
+function changeRecipe() {
     // evt.preventDefault();
     time = elements.searchForm.selectTime.value
     area = elements.searchForm.selectArea.value;
     ingredient = elements.searchForm.selectIngredients.value;
  fetchRecipe(limit, page, category, time, area, ingredient)
      .then(data => { 
+         totalPages = data.totalPages;
+          updatePagination()
          elements.container.innerHTML = createMarkup(data.results)
          fovariteAdd = document.querySelectorAll(`.categories-svg`)
-        
-         updatePagination()
      })
      
     .catch(err => console.log(`err`))
@@ -169,3 +174,62 @@ elements.searchForm.selectArea.classList.add('option-style');
 elements.searchForm.selectIngredients.classList.add('option-style');
 elements.searchForm.selectTime.classList.add('option-style');
 
+// Update Pagination \\
+
+const paginationContainer = document.querySelector('.js-pagination');
+
+function updatePagination() {
+  console.log(page)
+  paginationContainer.innerHTML = '';
+    if (totalPages != null) {
+      const pagesToShow = 3;
+
+  let startPage = Math.max(page - Math.floor(pagesToShow / 2), 1);
+  let endPage = startPage + pagesToShow - 1;
+
+  if (endPage > totalPages) {
+    endPage = totalPages;
+    startPage = Math.max(endPage - pagesToShow + 1, 1);
+  }
+
+  if (page > 1) {
+    console.log(page)
+    paginationContainer.innerHTML += `<button class="js-first-page"><<</button>`;
+    paginationContainer.innerHTML += `<button class="js-previous-page"><</button>`;
+  }
+
+  for (let i = startPage; i <= endPage; i++) {
+    if (i === page) {
+      paginationContainer.innerHTML += `<button class="js-page active" data-page="${i}">${i}</button>`;
+    } else {
+      paginationContainer.innerHTML += `<button class="js-page" data-page="${i}">${i}</button>`;
+    }
+  }
+  if (page <= totalPages - 3) {
+    paginationContainer.innerHTML += `<button class="js-three-dots">...</button>`;
+  }
+  if (page < totalPages) {
+    paginationContainer.innerHTML += `<button class="js-next-page">></button>`;
+    paginationContainer.innerHTML += `<button class="js-last-page">>></button>`;
+  }
+    } else {
+        console.log(`Nema storinok`)
+  }
+}
+
+paginationContainer.addEventListener('click', event => {
+  const target = event.target;
+  if (target.classList.contains('js-first-page')) {
+    page = 1;
+  } else if (target.classList.contains('js-previous-page')) {
+    page = Math.max(page - 1, 1);
+  } else if (target.classList.contains('js-next-page')) {
+    page = Math.min(page + 1, totalPages);
+  } else if (target.classList.contains('js-last-page')) {
+    page = totalPages;
+  } else if (target.classList.contains('js-page')) {
+    page = parseInt(target.getAttribute('data-page'));
+    }
+    updatePagination()
+  changeRecipe()
+});
